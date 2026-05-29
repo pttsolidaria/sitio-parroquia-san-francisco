@@ -159,4 +159,68 @@ ${message}`;
             closeAllModals();
         });
     }
+
+    // 6. INTERACTIVE INSTAGRAM POST WIDGET
+    const instaLikeBtn = document.getElementById("insta-like-btn");
+    const instaHeartIcon = document.getElementById("insta-heart-icon");
+    const instaLikesCount = document.getElementById("insta-likes-count");
+    const instaPostImgContainer = document.getElementById("insta-post-img-container");
+    const instaDoubletapHeart = document.getElementById("insta-doubletap-heart");
+    const instaCommentsToggle = document.getElementById("insta-comments-toggle");
+    const instaCommentsList = document.getElementById("insta-comments-list");
+
+    let isLiked = false;
+    let likes = 124;
+
+    function toggleLike() {
+        isLiked = !isLiked;
+        if (isLiked) {
+            likes++;
+            instaHeartIcon.style.fill = "#e1306c";
+            instaHeartIcon.style.stroke = "#e1306c";
+            instaLikeBtn.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                instaLikeBtn.style.transform = "scale(1)";
+            }, 100);
+        } else {
+            likes--;
+            instaHeartIcon.style.fill = "none";
+            instaHeartIcon.style.stroke = "var(--text-normal)";
+        }
+        instaLikesCount.textContent = likes;
+    }
+
+    if (instaLikeBtn && instaHeartIcon && instaLikesCount) {
+        instaLikeBtn.addEventListener("click", toggleLike);
+    }
+
+    if (instaPostImgContainer && instaDoubletapHeart) {
+        instaPostImgContainer.addEventListener("dblclick", () => {
+            if (!isLiked) {
+                toggleLike();
+            }
+            
+            // Pop heart animation
+            instaDoubletapHeart.style.opacity = "1";
+            instaDoubletapHeart.style.transform = "scale(1.2)";
+            
+            setTimeout(() => {
+                instaDoubletapHeart.style.opacity = "0";
+                instaDoubletapHeart.style.transform = "scale(0)";
+            }, 800);
+        });
+    }
+
+    if (instaCommentsToggle && instaCommentsList) {
+        instaCommentsToggle.addEventListener("click", () => {
+            const isVisible = instaCommentsList.style.display === "flex";
+            if (isVisible) {
+                instaCommentsList.style.display = "none";
+                instaCommentsToggle.textContent = "Ver los 18 comentarios";
+            } else {
+                instaCommentsList.style.display = "flex";
+                instaCommentsToggle.textContent = "Ocultar comentarios";
+            }
+        });
+    }
 });

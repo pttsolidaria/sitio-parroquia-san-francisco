@@ -449,47 +449,81 @@
                         </div>
                     </div>
 
-                    <!-- INSTAGRAM INTEGRATION GRID WIDGET -->
-                    <div class="card" style="background-color: var(--bg-card); border-color: var(--border-color); padding: var(--space-md); box-shadow: var(--shadow-md);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-sm);">
+                    <!-- INSTAGRAM INTERACTIVE POST WIDGET -->
+                    <div class="card" style="background-color: var(--bg-card); border-color: var(--border-color); padding: 0; overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; min-height: 500px;">
+                        <!-- Post Header -->
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm); border-bottom: 1px solid var(--border-color);">
                             <div style="display: flex; align-items: center; gap: var(--space-xs);">
-                                <div style="width: 40px; height: 40px; border-radius: var(--radius-full); background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px;">
-                                    <div style="background-color: var(--bg-card); width: 100%; height: 100%; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--text-normal);">SF</div>
+                                <div style="width: 38px; height: 38px; border-radius: var(--radius-full); background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px;">
+                                    <div style="background-color: var(--bg-card); width: 100%; height: 100%; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: var(--text-normal);">SF</div>
                                 </div>
                                 <div>
-                                    <h4 style="font-size: 0.95rem; margin-bottom: 1px;">@franciscodeasistco</h4>
-                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Comunidad Franciscana Temuco</p>
+                                    <h4 style="font-size: 0.9rem; margin-bottom: 1px; font-weight: 600; color: var(--text-normal);">franciscodeasistco</h4>
+                                    <p style="font-size: 0.7rem; color: var(--text-muted); line-height: 1;">Temuco, Chile</p>
                                 </div>
                             </div>
-                            <span style="font-size: 0.8rem; font-weight: 600; color: #e1306c;">Instagram Feed</span>
+                            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: var(--text-muted); cursor: pointer;"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                         </div>
                         
-                        <!-- Visual Image Grid Mock showing the 6 latest real, high-fidelity images -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: var(--space-md);">
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/san_francisco_statue.png" alt="Estatua de San Francisco en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <!-- Post Image -->
+                        <div style="position: relative; aspect-ratio: 1.2; overflow: hidden; background-color: #000; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="insta-post-img-container">
+                            <img src="img/parroquia_original.jpg" alt="Fachada de la parroquia en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+                            <!-- Big heart overlay animation -->
+                            <div id="insta-doubletap-heart" style="position: absolute; font-size: 5rem; opacity: 0; transform: scale(0); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; text-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10;">❤️</div>
+                        </div>
+                        
+                        <!-- Actions bar -->
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: var(--space-sm) var(--space-sm) var(--space-3xs) var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <!-- Heart / Like button -->
+                                <button id="insta-like-btn" style="background: none; border: none; padding: 0; cursor: pointer; outline: none; transition: transform 0.1s ease;">
+                                    <svg id="insta-heart-icon" viewBox="0 0 24 24" style="width: 26px; height: 26px; fill: none; stroke: var(--text-normal); stroke-width: 2; transition: all 0.2s ease;">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                    </svg>
+                                </button>
+                                <!-- Comment icon -->
+                                <button id="insta-comment-btn" style="background: none; border: none; padding: 0; cursor: pointer; outline: none;">
+                                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: none; stroke: var(--text-normal); stroke-width: 2;">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                    </svg>
+                                </button>
+                                <!-- Share icon -->
+                                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: none; stroke: var(--text-normal); stroke-width: 2; cursor: pointer;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                             </div>
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/scouts_community.png" alt="Grupo Scout San Francisco en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: none; stroke: var(--text-normal); stroke-width: 2; cursor: pointer;"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        
+                        <!-- Likes counter -->
+                        <div style="padding: 0 var(--space-sm) var(--space-3xs) var(--space-sm); font-size: 0.85rem; font-weight: 700; color: var(--text-normal);">
+                            Les gusta a <span id="insta-likes-count">124</span> personas
+                        </div>
+                        
+                        <!-- Caption and comments -->
+                        <div style="padding: 0 var(--space-sm) var(--space-sm) var(--space-sm); font-size: 0.85rem; line-height: 1.45; flex-grow: 1;">
+                            <div style="color: var(--text-normal);">
+                                <span style="font-weight: 700; margin-right: 4px;">franciscodeasistco</span>
+                                ¡Paz y Bien! Compartimos imágenes de la renovada fachada de nuestro histórico Templo Parroquial (Manuel Montt 39, Temuco). Un trabajo en comunidad para resguardar nuestro valioso monumento eclesial. ⛪✨ #SanFrancisco #Temuco #Comunidad
                             </div>
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/cafe_fraterno_solidario.png" alt="Voluntarios de Café Fraterno en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                            </div>
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/parroquia_original.jpg" alt="Fachada de la parroquia en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                            </div>
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/liturgical_bible_hero.png" alt="Evangelio en el Altar en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                            </div>
-                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
-                                <img src="img/sanctuary_candles.png" alt="Cálido santuario de velas en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            
+                            <!-- Toggle Comments link -->
+                            <button id="insta-comments-toggle" style="background: none; border: none; padding: 0; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; margin-top: var(--space-3xs); outline: none;">
+                                Ver los 18 comentarios
+                            </button>
+                            
+                            <!-- Hidden Comments list (toggleable) -->
+                            <div id="insta-comments-list" style="display: none; margin-top: var(--space-2xs); border-top: 1px dashed var(--border-color); padding-top: var(--space-2xs); flex-direction: column; gap: var(--space-3xs); color: var(--text-normal);">
+                                <div><span style="font-weight: 700; margin-right: 4px;">paz_temuco</span> Hermoso trabajo de restauración. ¡Felicitaciones! 🙌</div>
+                                <div><span style="font-weight: 700; margin-right: 4px;">carlos_mora</span> Un gran orgullo para nuestro barrio de Manuel Montt. Quedó espectacular.</div>
                             </div>
                         </div>
-
-                        <a href="https://www.instagram.com/franciscodeasistco/" target="_blank" class="btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; width: 100%; text-align: center; justify-content: center; display: flex; align-items: center; gap: 6px;">
-                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: white;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            Seguir en Instagram
-                        </a>
+                        
+                        <!-- Follow Instagram button -->
+                        <div style="padding: 0 var(--space-sm) var(--space-sm) var(--space-sm);">
+                            <a href="https://www.instagram.com/franciscodeasistco/" target="_blank" class="btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; width: 100%; text-align: center; justify-content: center; display: flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600;">
+                                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: white;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                Seguir en Instagram
+                            </a>
+                        </div>
                     </div>
                 </div>
 
