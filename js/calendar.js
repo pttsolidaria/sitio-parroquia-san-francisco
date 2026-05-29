@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h4 style="margin-top: var(--space-xs); font-size: 1.15rem; color: var(--text-main);">${day} de ${monthNames[month]}</h4>
                             <p style="margin-top: var(--space-xs); font-size: 0.9rem; color: var(--text-muted); font-style: italic;">"${state.season.desc}"</p>
                             <div style="margin-top: var(--space-sm); border-top: 1px solid var(--border-color); padding-top: var(--space-xs);">
-                                <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary);">Lectura del día:</strong>
+                                <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--primary);">Evangelio del día:</strong>
                                 <p style="font-size: 0.9rem; margin-top: 2px;">${state.readings}</p>
                             </div>
                         </div>
