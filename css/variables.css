@@ -1,0 +1,108 @@
+/* CSS VARIABLES & DESIGN SYSTEM FOR PARROQUIA SAN FRANCISCO DE ASÍS */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    /* TYPOGRAPHY */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Outfit', sans-serif;
+    
+    /* COMMON TRANSITIONS */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* SHADOWS & BLURS */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
+    --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --backdrop-blur: blur(12px);
+    
+    /* BORDER RADIUS */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    
+    /* SPACING SYSTEM */
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4.5rem;
+}
+
+/* THEME: LUZ CALMA (Light Mode - Ambient Warmth) */
+[data-theme="light"] {
+    --bg-main: hsl(35, 30%, 96%);          /* Soft Cream Sand */
+    --bg-card: hsl(35, 40%, 99%);          /* Bright Candle Wax White */
+    --bg-card-hover: hsl(35, 30%, 98%);
+    --bg-input: hsl(35, 20%, 94%);
+    --bg-navbar: rgba(247, 245, 240, 0.85); /* Semi-transparent cream */
+    
+    --border-color: hsl(24, 15%, 88%);
+    --border-hover: hsl(24, 25%, 78%);
+    
+    --text-main: hsl(24, 25%, 15%);        /* Deep Franciscan Roast */
+    --text-muted: hsl(24, 15%, 45%);       /* Muted Charcoal Brown */
+    --text-inverse: hsl(35, 30%, 96%);
+    
+    --primary: hsl(24, 40%, 35%);          /* Warm Franciscan Brown */
+    --primary-hover: hsl(24, 45%, 28%);
+    --primary-light: hsl(24, 40%, 92%);
+    
+    --secondary: hsl(38, 55%, 50%);        /* Liturgical Candle Gold */
+    --secondary-hover: hsl(38, 65%, 42%);
+    --secondary-light: hsl(38, 50%, 93%);
+    
+    --accent: hsl(14, 55%, 45%);           /* Earthy Terracotta */
+    
+    /* Liturgical Colors (Dynamic Widgets) */
+    --color-advent: hsl(270, 45%, 35%);    /* Penitential Violet */
+    --color-christmas: hsl(0, 0%, 90%);    /* Liturgical White */
+    --color-lent: hsl(270, 45%, 35%);       /* Purple */
+    --color-easter: hsl(38, 65%, 55%);      /* Gold/White */
+    --color-ordinary: hsl(110, 20%, 40%);   /* Hopeful Green */
+    --color-martyr: hsl(355, 60%, 45%);     /* Red */
+
+    --shadow-color: rgba(28, 20, 10, 0.08);
+}
+
+/* THEME: SILENCIO CONTEMPLATIVO (Dark Mode - Nocturnal Devotion) */
+[data-theme="dark"] {
+    --bg-main: hsl(24, 10%, 10%);          /* Deep Ash / Charcoal */
+    --bg-card: hsl(24, 12%, 14%);          /* Midnight Stone */
+    --bg-card-hover: hsl(24, 10%, 17%);
+    --bg-input: hsl(24, 10%, 8%);
+    --bg-navbar: rgba(26, 24, 22, 0.85);   /* Semi-transparent dark ash */
+    
+    --border-color: hsl(24, 10%, 20%);
+    --border-hover: hsl(24, 15%, 28%);
+    
+    --text-main: hsl(35, 20%, 88%);        /* Warm Sand Grey */
+    --text-muted: hsl(24, 10%, 60%);       /* Soft Stone Grey */
+    --text-inverse: hsl(24, 10%, 10%);
+    
+    --primary: hsl(24, 25%, 62%);          /* Warm Sand Altar Wood */
+    --primary-hover: hsl(24, 30%, 72%);
+    --primary-light: hsl(24, 15%, 18%);
+    
+    --secondary: hsl(38, 75%, 60%);        /* Radiant Golden Flame */
+    --secondary-hover: hsl(38, 85%, 68%);
+    --secondary-light: hsl(38, 40%, 18%);
+    
+    --accent: hsl(14, 60%, 55%);           /* Radiant Clay Red */
+    
+    /* Liturgical Colors (Dark Mode Enhanced Contrast) */
+    --color-advent: hsl(270, 50%, 55%);
+    --color-christmas: hsl(35, 20%, 90%);
+    --color-lent: hsl(270, 50%, 55%);
+    --color-easter: hsl(38, 75%, 60%);
+    --color-ordinary: hsl(110, 25%, 50%);
+    --color-martyr: hsl(355, 65%, 55%);
+
+    --shadow-color: rgba(0, 0, 0, 0.45);
+}

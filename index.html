@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Parroquia San Francisco de Asís — Temuco</title>
+    <meta name="description" content="Sitio oficial de la Parroquia San Francisco de Asís en Temuco. Horarios de Misas, sacramentos, comunidades de base (CEB), Hogar Nuestra Señora del Carmen y actividades pastorales en Manuel Montt 39.">
+    <meta name="keywords" content="Parroquia San Francisco Temuco, Misas Temuco, Iglesia San Francisco Manuel Montt, Sacramentos Temuco, CEB Temuco, Hogar del Carmen, obispado temuco">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ptthetrooper-dwmny.wordpress.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Parroquia San Francisco de Asís — Temuco">
+    <meta property="og:description" content="Bienvenido a la comunidad parroquial de San Francisco de Asís en Temuco. Encuentra horarios de misas, sacramentos y labor pastoral.">
+    <meta property="og:url" content="https://ptthetrooper-dwmny.wordpress.com/">
+    <meta property="og:image" content="img/liturgical_bible_hero.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Parroquia San Francisco de Asís — Temuco">
+    <meta name="twitter:description" content="Comunidad parroquial franciscana en Temuco. Horarios de misas, sacramentos y asistencia pastoral.">
+    <meta name="twitter:image" content="img/liturgical_bible_hero.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="main-navbar">
+                <a href="#" class="nav-brand" id="nav-brand-link" aria-label="Ir al inicio">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Custom elegant Cross / Liturgical symbol SVG -->
+                        <path d="M11 2h2v7h6v2h-6v11h-2v-11h-6v-2h6V2z"/>
+                    </svg>
+                    <span class="nav-logo-text">S. Francisco</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html#pastoral-hub" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
+                    <li><a href="index.html#misiones" class="nav-link">Misiones</a></li>
+                    <li><a href="index.html#comunidades" class="nav-link">Comunidades</a></li>
+                    <li><a href="biografia.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">San Francisco</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn flex-center" id="theme-toggle" aria-label="Alternar tema de color">
+                        <svg viewBox="0 0 24 24" id="theme-icon">
+                            <!-- Theme icon loaded dynamically via JavaScript -->
+                        </svg>
+                    </button>
+                    <button class="nav-toggle-btn" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
+        <ul class="mobile-nav-menu text-center">
+            <li><a href="index.html#pastoral-hub" class="mobile-nav-link">Servicios Pastorales</a></li>
+            <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
+            <li><a href="index.html#misiones" class="mobile-nav-link">Misiones Sociales</a></li>
+            <li><a href="index.html#comunidades" class="mobile-nav-link">Comunidades de Base</a></li>
+            <li><a href="biografia.html" class="mobile-nav-link" style="color: var(--secondary);">San Francisco</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN BODY SECTIONS -->
+    <main>
+        
+        <!-- HERO CONTEMPLATIVO -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <img src="img/parroquia_original.png" alt="Templo Parroquial de San Francisco de Asís Temuco">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content animate-fade-in-up">
+                <span class="hero-subtitle">Parroquia San Francisco de Asís</span>
+                <h1 class="hero-title">Paz y Bien en nuestra Comunidad</h1>
+                <p class="hero-desc">Un espacio de fe, encuentro y fraternidad franciscana en pleno corazón de Temuco. Sean bienvenidos a nuestra casa.</p>
+                <div class="flex-center" style="gap: var(--space-sm); flex-wrap: wrap;">
+                    <a href="#pastoral-hub" class="btn btn-primary pulse-primary">Explorar Servicios</a>
+                    <a href="#liturgia" class="btn btn-secondary">Misas del Día</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES & PASTORAL HUB -->
+        <section class="section-padding container watermark-bg" id="pastoral-hub">
+            <div class="text-center" style="margin-bottom: var(--space-xl);">
+                <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Centro Pastoral</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Busca y accede rápidamente a los horarios, trámites e información de nuestra parroquia en Temuco.</p>
+            </div>
+
+            <!-- Real-time filtering Search Box -->
+            <div class="search-container">
+                <input type="text" class="search-box" id="pastoral-search" placeholder="Buscar celebraciones, sacramentos o capillas..." aria-label="Buscar en el sitio">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </div>
+
+            <!-- Interactive Grid Cards -->
+            <div class="grid-2">
+                
+                <!-- CARD: MISAS Y HORARIOS -->
+                <div class="card card-accent hover-lift animate-fade-in-up delay-1" data-searchable data-search-keywords="misas horarios confesiones eucaristia adoracion santisimo domingo sabado">
+                    <span class="card-meta">Eucaristía y Celebraciones</span>
+                    <h3 class="card-title">Misas y Confesiones</h3>
+                    <p class="card-desc">Horarios de celebraciones litúrgicas, sacramentos de reconciliación y adoración al Santísimo Sacramento en nuestro templo principal de Manuel Montt.</p>
+                    
+                    <div class="tabs-parent" style="margin-top: var(--space-sm);">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab-target="tab-misas">Misas</button>
+                            <button class="tab-btn" data-tab-target="tab-confesiones">Confesiones</button>
+                            <button class="tab-btn" data-tab-target="tab-adoracion">Adoración</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="tab-misas">
+                            <div class="timetable">
+                                <div class="timetable-row">
+                                    <span class="timetable-day">Martes a Sábado</span>
+                                    <span class="timetable-time">19:00 hrs</span>
+                                </div>
+                                <div class="timetable-row">
+                                    <span class="timetable-day">Domingo</span>
+                                    <span class="timetable-time">12:15 hrs y 19:00 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="tab-confesiones">
+                            <div class="timetable">
+                                <div class="timetable-row">
+                                    <span class="timetable-day">Martes a Viernes</span>
+                                    <span class="timetable-time">18:00 hrs a 18:50 hrs</span>
+                                </div>
+                                <div class="timetable-row">
+                                    <span class="timetable-day">Domingo (Durante Eucaristía)</span>
+                                    <span class="timetable-time">12:15 hrs y 19:00 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="tab-adoracion">
+                            <div class="timetable">
+                                <div class="timetable-row">
+                                    <span class="timetable-day">Jueves Sacerdotales</span>
+                                    <span class="timetable-time">18:00 hrs a 19:00 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD: SACRAMENTOS -->
+                <div class="card card-accent hover-lift animate-fade-in-up delay-2" data-searchable data-search-keywords="sacramentos bautizo bautismo comunion catequesis confirmacion matrimonio uncion enfermos">
+                    <span class="card-meta">Camino de Fe</span>
+                    <h3 class="card-title">Sacramentos</h3>
+                    <p class="card-desc">Información, charlas de preparación y requisitos indispensables para celebrar los santos sacramentos de nuestra fe católica junto a la comunidad.</p>
+                    <div style="margin-top: var(--space-md);">
+                        <button class="btn btn-secondary" data-modal-open="modal-sacramentos" style="width: 100%;">Ver Requisitos Pastorales</button>
+                    </div>
+                </div>
+
+                <!-- CARD: SECRETARÍA -->
+                <div class="card card-accent hover-lift animate-fade-in-up delay-3" data-searchable data-search-keywords="secretaria despacho oficina certificados intenciones misas atencion contacto manuel montt leonardo villagran santana sandra lagos balboa marcelo schmeisser nicklitschek fono +56452210481 +56988595892 email parroquialourdestemuco@gmail.com">
+                    <span class="card-meta">Atención Parroquial</span>
+                    <h3 class="card-title">Despacho y Secretaría</h3>
+                    <p class="card-desc">Trámites y certificados con nuestra secretaria <strong>Sra. Sandra Lagos Balboa</strong>, y asistencia del Párroco <strong>Pbro. Leonardo Villagrán Santana</strong> y Diácono <strong>Don Marcelo Schmeisser Nicklitschek</strong>.</p>
+                    
+                    <div class="timetable" style="margin-top: var(--space-sm); margin-bottom: var(--space-md);">
+                        <div class="timetable-row">
+                            <span class="timetable-day">Martes a Sábado</span>
+                            <span class="timetable-time">10:00 - 13:00 y 15:00 - 19:30 hrs</span>
+                        </div>
+                        <div class="timetable-row" style="border-top: 1px solid var(--border-color); padding-top: var(--space-3xs); margin-top: var(--space-3xs);">
+                            <span class="timetable-day">Correo Oficial</span>
+                            <span class="timetable-time"><a href="mailto:parroquialourdestemuco@gmail.com" style="color: var(--primary); text-decoration: underline; word-break: break-all;">parroquialourdestemuco@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" data-modal-open="modal-secretaria" style="width: 100%;">Enviar Mensaje / Trámites</button>
+                </div>
+
+                <!-- CARD: SEDE PARROQUIAL -->
+                <div class="card card-accent hover-lift animate-fade-in-up delay-4" data-searchable data-search-keywords="sede parroquial templo direccion ubicacion mapa montt 39 historia fundacion 1926 erigida">
+                    <span class="card-meta">Ubicación e Historia</span>
+                    <h3 class="card-title">Sede Parroquial (Templo)</h3>
+                    <p class="card-desc">Nuestro emblemático templo parroquial une elementos neoclásicos y góticos, un monumento abierto para la oración silenciosa.</p>
+                    <div class="timetable" style="margin-top: var(--space-sm); margin-bottom: var(--space-md);">
+                        <div class="timetable-row">
+                            <span class="timetable-day">Dirección</span>
+                            <span class="timetable-time" style="font-weight: 500;">Manuel Montt Nº 39, Temuco</span>
+                        </div>
+                        <div class="timetable-row" style="border-top: 1px solid var(--border-color); padding-top: var(--space-3xs); margin-top: var(--space-3xs);">
+                            <span class="timetable-day">Fundación</span>
+                            <span class="timetable-time" style="font-weight: 500;">Año 1926</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: var(--space-md);">
+                        <a href="https://maps.google.com/?q=Manuel+Montt+39,+Temuco" target="_blank" class="btn btn-primary" style="width: 100%;">
+                            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: white; margin-right: 4px;">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            ¿Cómo llegar? (Google Maps)
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LITURGICAL CALENDAR INTERACTIVE WIDGET -->
+        <section class="section-padding" id="liturgia" style="background-color: var(--bg-card); transition: background-color var(--transition-slow);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--space-xl);">
+                    <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Calendario Litúrgico</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Explora las temporadas eclesiásticas y descubre el color y las lecturas bíblicas correspondientes a cada día de devoción.</p>
+                </div>
+
+                <div class="grid-2" style="align-items: start;">
+                    <!-- Calendar Widget render -->
+                    <div class="liturgical-widget">
+                        <div class="calendar-header">
+                            <button id="calendar-prev" class="btn-secondary" style="padding: 0.5rem 1rem; border-radius: var(--radius-full); cursor: pointer;" aria-label="Mes anterior">&larr;</button>
+                            <h3 id="calendar-month-year" style="font-size: 1.2rem;">Mayo 2026</h3>
+                            <button id="calendar-next" class="btn-secondary" style="padding: 0.5rem 1rem; border-radius: var(--radius-full); cursor: pointer;" aria-label="Mes siguiente">&rarr;</button>
+                        </div>
+                        <div class="calendar-grid" id="calendar-days-header-container">
+                            <!-- Week headers -->
+                            <div class="calendar-day-header">Lun</div>
+                            <div class="calendar-day-header">Mar</div>
+                            <div class="calendar-day-header">Mié</div>
+                            <div class="calendar-day-header">Jue</div>
+                            <div class="calendar-day-header">Vie</div>
+                            <div class="calendar-day-header">Sáb</div>
+                            <div class="calendar-day-header">Dom</div>
+                        </div>
+                        <div class="calendar-grid" id="calendar-days" style="margin-top: var(--space-2xs);">
+                            <!-- Days populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Liturgical Info Panel -->
+                    <div class="card card-accent" style="height: 100%; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+                        <div id="liturgical-details">
+                            <!-- Loaded Dynamically when day clicked -->
+                            <p style="color: var(--text-muted); text-align: center;">Selecciona un día del calendario para visualizar sus lecturas bíblicas y temporada litúrgica.</p>
+                        </div>
+                        
+                        <!-- Legend of colors -->
+                        <div style="margin-top: var(--space-lg); border-top: 1px solid var(--border-color); padding-top: var(--space-sm);">
+                            <h5 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-xs);">Guía de Colores Litúrgicos</h5>
+                            <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs); font-size: 0.8rem;">
+                                <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-violet" style="width: 12px; height: 12px; padding: 0;"></span> Adviento / Cuaresma</span>
+                                <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-white" style="width: 12px; height: 12px; padding: 0; border: 1px solid #777;"></span> Navidad / Pascua</span>
+                                <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-green" style="width: 12px; height: 12px; padding: 0;"></span> Tiempo Ordinario</span>
+                                <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-red" style="width: 12px; height: 12px; padding: 0;"></span> Fiestas / Mártires</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIAL MISSIONS & CHARITY (Misiones Sociales) -->
+        <section class="section-padding container" id="misiones">
+            <div class="text-center" style="margin-bottom: var(--space-xl);">
+                <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Misiones y Vida Comunitaria</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Nuestra parroquia extiende su labor franciscana a través de importantes áreas de acogida social y crecimiento espiritual.</p>
+            </div>
+
+            <div class="grid-3">
+                
+                <!-- HOGAR NUESTRA SEÑORA DEL CARMEN -->
+                <div class="card hover-lift animate-fade-in-up delay-1" data-searchable data-search-keywords="hogar nuestra señora del carmen ancianos adultos mayores voluntariado caridad donaciones ayuda social">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);">
+                        <img src="img/sanctuary_candles.png" alt="Velas encendidas en el santuario, ambiente cálido de caridad" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <span class="card-meta">Asistencia Adulto Mayor</span>
+                    <h3 class="card-title">Hogar Ntra. Señora del Carmen</h3>
+                    <p class="card-desc">Casa de acogida dedicada al cuidado integral y digno de adultos mayores vulnerables. Conoce cómo apoyar como voluntario o a través de aportes solidarios directos.</p>
+                    <button class="btn btn-text" data-modal-open="modal-hogar">Saber más &rarr;</button>
+                </div>
+
+                <!-- CAFÉ FRATERNO -->
+                <div class="card hover-lift animate-fade-in-up delay-2" data-searchable data-search-keywords="cafe fraterno alimentos comedor social acogida desayuno almuerzo personas situacion calle caridad">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm); background: var(--primary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; fill: var(--primary);">
+                            <path d="M2 21h18v-2H2v2zM20 8h-2V5h2v3zm-4-5H4v14h12V3zm2 3h4v4h-4V6zm-2 11H2v-2h14v2z"/>
+                        </svg>
+                    </div>
+                    <span class="card-meta">Obra Social Parroquial</span>
+                    <h3 class="card-title">Café Fraterno</h3>
+                    <p class="card-desc">Cada semana acogemos a hermanos y hermanas en situación de calle, brindándoles alimentación caliente, abrigo y una mano fraterna de escucha sincera en comunidad.</p>
+                    <button class="btn btn-text" data-modal-open="modal-cafe">Saber más &rarr;</button>
+                </div>
+
+                <!-- OFS (ORDEN FRANCISCANA SEGLAR) -->
+                <div class="card hover-lift animate-fade-in-up delay-3" data-searchable data-search-keywords="ofs orden franciscana seglar fraternidad espiritualidad laicos san francisco clara asis hermanos laicos">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm); background: var(--secondary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; fill: var(--secondary);">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+                        </svg>
+                    </div>
+                    <span class="card-meta">Espiritualidad Laical</span>
+                    <h3 class="card-title">OFS (Franciscanos Seglares)</h3>
+                    <p class="card-desc">Comunidad de laicos y clérigos seglares que viven el Evangelio de Jesucristo a ejemplo de San Francisco de Asís, promoviendo la paz, la ecología y la fraternidad universal.</p>
+                    <button class="btn btn-text" data-modal-open="modal-ofs">Saber más &rarr;</button>
+                </div>
+
+                <!-- GRUPO SCOUT SAN FRANCISCO -->
+                <div class="card hover-lift animate-fade-in-up delay-4" data-searchable data-search-keywords="grupo scout san francisco jovenes niños actividades campamento naturaleza formacion lobatos pioneros guiadores">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm); background: var(--primary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; fill: var(--primary);">
+                            <path d="M12 2L1 21h22L12 2zm0 4l7.53 13H4.47L12 6zm-1 6v3h2v-3h-2zm0-4v2h2V8h-2z"/>
+                        </svg>
+                    </div>
+                    <span class="card-meta">Pastoral Juvenil</span>
+                    <h3 class="card-title">Grupo Scout "San Francisco"</h3>
+                    <p class="card-desc">Formación de niños, niñas y jóvenes en valores cristianos, autonomía y amor por el cuidado de la creación, mediante actividades al aire libre los días sábados.</p>
+                    <button class="btn btn-text" data-modal-open="modal-scout">Saber más &rarr;</button>
+                </div>
+
+                <!-- GRUPO BÍBLICO ISAÍAS -->
+                <div class="card hover-lift animate-fade-in-up delay-5" data-searchable data-search-keywords="grupo biblico isaias estudio escrituras biblia antiguo testamento profetas fe">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm); background: var(--primary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; fill: var(--primary);">
+                            <path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/>
+                        </svg>
+                    </div>
+                    <span class="card-meta">Estudio de las Escrituras</span>
+                    <h3 class="card-title">Grupo Bíblico Isaías</h3>
+                    <p class="card-desc">Comunidad dedicada al estudio, oración y profundización de los textos de los profetas y del Antiguo Testamento para iluminar nuestra vida diaria.</p>
+                    <button class="btn btn-text" data-modal-open="modal-isaias">Saber más &rarr;</button>
+                </div>
+
+                <!-- GRUPO BÍBLICO SANTIAGO APÓSTOL -->
+                <div class="card hover-lift animate-fade-in-up delay-6" data-searchable data-search-keywords="grupo biblico santiago apostol estudio escrituras biblia nuevo testamento cartas evangelio fe">
+                    <div style="height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-sm); background: var(--secondary-light); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; fill: var(--secondary);">
+                            <path d="M21 5c-1.11-.9-2.45-1.5-3.82-1.81C16.03 2.87 14.82 3 13.5 3H11v18h2.5c1.47 0 2.87-.21 4.1-.6 1.39-.44 2.58-1.22 3.4-2.26.15-.19.23-.42.23-.66V6.15c0-.49-.36-.92-.85-1.02zM3 5c1.11-.9 2.45-1.5 3.82-1.81C8.03 2.87 9.24 3 10.5 3H13v18h-2.5c-1.47 0-2.87-.21-4.1-.6-1.39-.44-2.58-1.22-3.4-2.26C2.85 20.95 2.77 20.72 2.77 20.48V6.15c0-.49.36-.92.85-1.02z"/>
+                        </svg>
+                    </div>
+                    <span class="card-meta">Estudio de las Escrituras</span>
+                    <h3 class="card-title">Grupo Bíblico Santiago Apóstol</h3>
+                    <p class="card-desc">Espacio de lectura guiada centrado en el Nuevo Testamento, las cartas apostólicas y su aplicación en la fe activa, caridad y servicio parroquial.</p>
+                    <button class="btn btn-text" data-modal-open="modal-santiago">Saber más &rarr;</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NOTICIAS Y REDES SOCIALES (FACEBOOK & INSTAGRAM INTEGRATION) -->
+        <section class="section-padding container watermark-bg" id="noticias-sociales">
+            <div class="text-center" style="margin-bottom: var(--space-xl);">
+                <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Muro de Noticias y Redes</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Entérate al instante de nuestras novedades. Publicaciones en vivo y boletines desde nuestros canales oficiales.</p>
+            </div>
+
+            <div class="grid-2" style="align-items: start; gap: var(--space-xl);">
+                
+                <!-- COLUMN 1: LATEST NEWS FEED -->
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: var(--space-md); border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 4px;">Novedades y Boletines</h3>
+                    
+                    <!-- NEWS CARD 1: FACEBOOK simulated post -->
+                    <div class="card" style="margin-bottom: var(--space-sm); border-left: 4px solid #1877f2;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2xs);">
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #1877f2; display: flex; align-items: center; gap: 4px;">
+                                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: #1877f2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                FACEBOOK OFICIAL
+                            </span>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Hace 2 días</span>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--space-xs); line-height: 1.5;">¡Alegres en el Señor! Compartimos imágenes de la renovada fachada de nuestro histórico Templo Parroquial (Manuel Montt 39, Temuco). Un trabajo en comunidad para resguardar nuestro valioso monumento eclesial. ¡Paz y Bien a todos!</p>
+                        <a href="https://www.facebook.com/franciscodeasisTco" target="_blank" class="btn-text" style="font-size: 0.85rem; padding: 0;">Ver Publicación &rarr;</a>
+                    </div>
+
+                    <!-- NEWS CARD 2: INSTAGRAM simulated post -->
+                    <div class="card" style="margin-bottom: var(--space-sm); border-left: 4px solid #e1306c;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2xs);">
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #e1306c; display: flex; align-items: center; gap: 4px;">
+                                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: #e1306c;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                INSTAGRAM PARROQUIA
+                            </span>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Hace 5 días</span>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--space-xs); line-height: 1.5;">Atención jóvenes: recordamos que están abiertas las fichas de postulación para el Grupo Scout "San Francisco" en todos sus rangos de edad. Actividades al aire libre y campamento formativo cada sábado. ¡Llenemos de vida los salones!</p>
+                        <a href="https://www.instagram.com/franciscodeasistco/" target="_blank" class="btn-text" style="font-size: 0.85rem; padding: 0;">Ver Publicación &rarr;</a>
+                    </div>
+
+                    <!-- NEWS CARD 3: FACEBOOK simulated post -->
+                    <div class="card" style="margin-bottom: var(--space-sm); border-left: 4px solid #1877f2;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2xs);">
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #1877f2; display: flex; align-items: center; gap: 4px;">
+                                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: #1877f2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                FACEBOOK OFICIAL
+                            </span>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Hace 1 semana</span>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--space-xs); line-height: 1.5;">El Café Fraterno sigue adelante gracias a sus aportes. Esta semana necesitamos recolectar embutidos, pan, té y azúcar en la Secretaría Parroquial para atender a nuestros hermanos de la calle. ¡Tu generosidad es Cristo que nos abraza!</p>
+                        <a href="https://www.facebook.com/franciscodeasisTco" target="_blank" class="btn-text" style="font-size: 0.85rem; padding: 0;">Ver Publicación &rarr;</a>
+                    </div>
+                </div>
+                
+                <!-- COLUMN 2: BRANDED SOCIAL BOXES (INTEGRACIÓN) -->
+                <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                    <h3 style="font-size: 1.3rem; margin-bottom: var(--space-md); border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 4px;">Cuadros de Integración</h3>
+                    
+                    <!-- FACEBOOK PAGE INTEGRATION WIDGET -->
+                    <div class="card" style="background-color: var(--bg-card); border-color: #1877f2; padding: 0; overflow: hidden; box-shadow: var(--shadow-md);">
+                        <!-- Fake Iframe/Widget Header -->
+                        <div style="background-color: #1877f2; color: #ffffff; padding: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
+                            <div class="flex-center" style="width: 44px; height: 44px; border-radius: var(--radius-full); background-color: #ffffff; color: #1877f2; font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem;">F</div>
+                            <div>
+                                <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 2px; font-family: var(--font-body);">Parroquia San Francisco Temuco</h4>
+                                <p style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.85); font-weight: 300;">3,420 seguidores • Obra Franciscana</p>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: var(--space-md); text-align: left;">
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-xs); display: flex; align-items: center; gap: 4px;">
+                                <span style="font-weight: 600; color: #1877f2;">Fotos y Publicaciones Recientes</span> • Actualizado
+                            </div>
+                            
+                            <!-- Premium Multi-Photo Layout mimicking a real Facebook post with the latest photos -->
+                            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4px; height: 180px; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-xs); border: 1px solid var(--border-color);">
+                                <!-- Main Big Photo (Left) -->
+                                <div style="height: 100%; overflow: hidden; position: relative;">
+                                    <img src="img/san_francisco_statue.png" alt="Devociones a San Francisco en Facebook" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                </div>
+                                <!-- Stacked Photos (Right) -->
+                                <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 4px; height: 100%;">
+                                    <div style="overflow: hidden; position: relative; height: 100%;">
+                                        <img src="img/scouts_community.png" alt="Misión Scout en Facebook" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    </div>
+                                    <div style="overflow: hidden; position: relative; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                        <img src="img/cafe_fraterno_solidario.png" alt="Café Fraterno Solidario en Facebook" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; pointer-events: none;">
+                                            +3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-md); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4;">
+                                ¡Nuestra comunidad franciscana sigue activa en Temuco! Compartimos registros de la oración de nuestro patrono, actividades de scouts y nuestro Café Fraterno.
+                            </p>
+                            <a href="https://www.facebook.com/franciscodeasisTco" target="_blank" class="btn" style="background-color: #1877f2; color: #ffffff; width: 100%; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: white; margin-right: 6px;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                Seguir Página en Facebook
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- INSTAGRAM INTEGRATION GRID WIDGET -->
+                    <div class="card" style="background-color: var(--bg-card); border-color: var(--border-color); padding: var(--space-md); box-shadow: var(--shadow-md);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
+                                <div style="width: 40px; height: 40px; border-radius: var(--radius-full); background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px;">
+                                    <div style="background-color: var(--bg-card); width: 100%; height: 100%; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--text-normal);">SF</div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; margin-bottom: 1px;">@franciscodeasistco</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Comunidad Franciscana Temuco</p>
+                                </div>
+                            </div>
+                            <span style="font-size: 0.8rem; font-weight: 600; color: #e1306c;">Instagram Feed</span>
+                        </div>
+                        
+                        <!-- Visual Image Grid Mock showing the 6 latest real, high-fidelity images -->
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: var(--space-md);">
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/san_francisco_statue.png" alt="Estatua de San Francisco en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/scouts_community.png" alt="Grupo Scout San Francisco en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/cafe_fraterno_solidario.png" alt="Voluntarios de Café Fraterno en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/parroquia_original.png" alt="Fachada de la parroquia en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/liturgical_bible_hero.png" alt="Evangelio en el Altar en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                            <div style="aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; position: relative;">
+                                <img src="img/sanctuary_candles.png" alt="Cálido santuario de velas en Instagram" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </div>
+                        </div>
+
+                        <a href="https://www.instagram.com/franciscodeasistco/" target="_blank" class="btn" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; width: 100%; text-align: center; justify-content: center; display: flex; align-items: center; gap: 6px;">
+                            <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: white;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BASE ECCLESIAL COMMUNITIES (CEBs) -->
+        <section class="section-padding watermark-bg" id="comunidades" style="background-color: var(--bg-card); transition: background-color var(--transition-slow);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--space-xl);">
+                    <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Comunidades Eclesiales de Base (CEB)</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Nuestra parroquia extiende su calor misionero a través de capillas barriales. Encuentra tu comunidad más cercana.</p>
+                </div>
+
+                <div class="grid-3">
+                    
+                    <!-- CEB NUESTRA SEÑORA DE LOS ÁNGELES -->
+                    <div class="card hover-lift card-accent" data-searchable data-search-keywords="ceb nuestra señora de los angeles capilla misa domingo monte ararat getsemani villa san andres">
+                        <span class="card-meta">Capilla y Comunidad</span>
+                        <h3 class="card-title">CEB Ntra. Señora de los Ángeles</h3>
+                        <p class="card-desc">Lugar entrañable de oración y encuentro. Ubicada en <strong>Monte Ararat esq. Getsemaní, Villa San Andrés</strong>.</p>
+                        <div class="timetable" style="margin-top: var(--space-sm);">
+                            <div class="timetable-row">
+                                <span class="timetable-day">Santa Misa</span>
+                                <span class="timetable-time">Domingos: 11:00 hrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEB NUESTRA SEÑORA DE FÁTIMA -->
+                    <div class="card hover-lift card-accent" data-searchable data-search-keywords="ceb nuestra señora de fatima capilla misa sabado jose del rosario muñoz pichi cautin">
+                        <span class="card-meta">Capilla y Comunidad</span>
+                        <h3 class="card-title">CEB Ntra. Señora de Fátima</h3>
+                        <p class="card-desc">Comunidad unida y activa en su vecindario. Ubicada en <strong>José del Rosario Muñoz Nº 427, Pichi Cautín</strong>.</p>
+                        <div class="timetable" style="margin-top: var(--space-sm);">
+                            <div class="timetable-row">
+                                <span class="timetable-day">Santa Misa</span>
+                                <span class="timetable-time">Sábados: 17:30 hrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEB SAN ANTONIO DE PADUA -->
+                    <div class="card hover-lift card-accent" data-searchable data-search-keywords="ceb san antonio de padua capilla misa sabado camino monteverde">
+                        <span class="card-meta">Capilla y Comunidad</span>
+                        <h3 class="card-title">CEB San Antonio de Padua</h3>
+                        <p class="card-desc">Celebración comunitaria e inspiradora. Ubicada en <strong>Camino Monteverde</strong>.</p>
+                        <div class="timetable" style="margin-top: var(--space-sm);">
+                            <div class="timetable-row">
+                                <span class="timetable-day">Santa Misa</span>
+                                <span class="timetable-time">2º Sábado del mes: 16:00 hrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: var(--font-heading);">Parroquia San Francisco</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-sm);">Sede y templo parroquial de la Orden de los Hermanos Menores (Franciscanos) en Temuco. Paz y Bien en el Señor.</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-xs); font-weight: 500;">Párroco: Pbro. Leonardo Villagrán Santana</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-2xs);">Fundada en 1926. Diócesis de Temuco.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto y Enlaces</h3>
+                <ul class="footer-links" style="font-size: 0.9rem;">
+                    <li><a href="index.html#pastoral-hub">Centro Pastoral</a></li>
+                    <li><a href="index.html#liturgia">Liturgia del Día</a></li>
+                    <li><a href="index.html#misiones">Misiones Sociales</a></li>
+                    <li><a href="biografia.html">Biografía de San Francisco</a></li>
+                    <li><a href="https://obispadotemuco.cl" target="_blank" rel="noopener">Diócesis de Temuco</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="font-size: 0.9rem;">
+                <h3>Coordenadas</h3>
+                <p style="margin-top: var(--space-sm);">Manuel Montt Nº 39, Temuco, Región de la Araucanía, Chile.</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Teléfono: +56 45 2210481</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">WhatsApp: +56 9 8859 5892</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Correo: <a href="mailto:parroquialourdestemuco@gmail.com" style="color: inherit; text-decoration: underline;">parroquialourdestemuco@gmail.com</a></p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: var(--space-2xs);">Urgencias e unciones coordinar directamente en oficina.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Parroquia San Francisco de Asís — Temuco. Desarrollado en fraternidad con Antigravity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================================================== -->
+    <!-- OVERLAY MODAL PORTALS (WINDOWS EMERGENTES) -->
+    <!-- ======================================================== -->
+
+    <!-- MODAL: SACRAMENT DETAILS -->
+    <div class="modal-overlay" id="modal-sacramentos">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Guía de Sacramentos</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body tabs-parent">
+                <div class="tabs-header" style="margin-bottom: var(--space-sm);">
+                    <button class="tab-btn active" data-tab-target="sac-bautizo">Bautizo</button>
+                    <button class="tab-btn" data-tab-target="sac-comunion">1ª Comunión</button>
+                    <button class="tab-btn" data-tab-target="sac-confirmacion">Confirmación</button>
+                    <button class="tab-btn" data-tab-target="sac-matrimonio">Matrimonio</button>
+                </div>
+                
+                <div class="tab-content active" id="sac-bautizo">
+                    <h4 style="font-size: 1rem; color: var(--primary);">Requisitos para Bautismo</h4>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-2xs);">El Bautismo se celebra comunalmente los sábados por la mañana previa inscripción.</p>
+                    <ul style="font-size: 0.9rem; padding-left: var(--space-sm); margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                        <li>Certificado de nacimiento del niño o niña.</li>
+                        <li>Identificación de los padres y padrinos (deben ser mayores de 16 años y confirmados).</li>
+                        <li>Asistencia obligatoria de padres y padrinos a las 2 charlas pre-bautismales programadas.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content" id="sac-comunion">
+                    <h4 style="font-size: 1rem; color: var(--primary);">Catequesis de Primera Comunión</h4>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-2xs);">Preparación dirigida a niños y niñas a partir de los 8 años de edad (3º Básico).</p>
+                    <ul style="font-size: 0.9rem; padding-left: var(--space-sm); margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                        <li>Duración del proceso: 2 años de catequesis familiar.</li>
+                        <li>Inscripciones durante los meses de marzo y abril de cada año en Secretaría.</li>
+                        <li>Participación activa de los padres en los encuentros semanales paralelos.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content" id="sac-confirmacion">
+                    <h4 style="font-size: 1rem; color: var(--primary);">Sacramento de la Confirmación</h4>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-2xs);">Dirigido a jóvenes (de 14 a 18 años) y catequesis especial para adultos rezagados.</p>
+                    <ul style="font-size: 0.9rem; padding-left: var(--space-sm); margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                        <li>Fotocopia del certificado de Bautizo del postulante.</li>
+                        <li>Proceso formativo de 1 año con reuniones los días sábados por la tarde.</li>
+                        <li>El padrino o madrina debe estar confirmado y llevar vida de fe activa.</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content" id="sac-matrimonio">
+                    <h4 style="font-size: 1rem; color: var(--primary);">Matrimonio Católico</h4>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-2xs);">Reservar fecha y abrir el expediente matrimonial con al menos 6 meses de anticipación.</p>
+                    <ul style="font-size: 0.9rem; padding-left: var(--space-sm); margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                        <li>Certificados recientes de Bautismo de ambos novios (expedidos para matrimonio).</li>
+                        <li>Haber realizado las charlas premartrimoniales de novios de la Diócesis.</li>
+                        <li>Presentarse con dos testigos mayores de edad (no familiares directos) para la información.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: var(--space-md); border-top: 1px solid var(--border-color); padding-top: var(--space-sm);">
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Para mayor información sobre fechas o casos especiales, por favor contactar al despacho parroquial.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: SECRETARÍA / CONTACT FORM -->
+    <div class="modal-overlay" id="modal-secretaria">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Contacto y Trámites Parroquiales</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: var(--space-xs); margin-bottom: var(--space-md); font-size: 0.85rem;">
+                    <p style="margin-bottom: var(--space-3xs); font-weight: 600; color: var(--primary);">Coordenadas de la Oficina Parroquial:</p>
+                    <p style="margin-bottom: var(--space-3xs);"><strong>Dirección:</strong> Manuel Montt Nº 39, Temuco</p>
+                    <p style="margin-bottom: var(--space-3xs);"><strong>Teléfono Fijo:</strong> <a href="tel:+56452210481" style="color: var(--text); text-decoration: underline;">+56 45 2210481</a></p>
+                    <p style="margin-bottom: var(--space-3xs);"><strong>WhatsApp:</strong> <a href="https://wa.me/56988595892" target="_blank" style="color: var(--text); text-decoration: underline;">+56 9 8859 5892</a></p>
+                    <p style="margin-bottom: 0;"><strong>Correo Electrónico:</strong> <a href="mailto:parroquialourdestemuco@gmail.com" style="color: var(--primary); text-decoration: underline; font-weight: 500;">parroquialourdestemuco@gmail.com</a></p>
+                </div>
+                
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--space-sm);">Completa los datos a continuación para enviar tu consulta o solicitud de trámites directamente al WhatsApp de nuestra secretaría parroquial.</p>
+                
+                <form id="parish-contact-form">
+                    <div class="form-group">
+                        <label for="contact-name" class="form-label">Nombre Completo</label>
+                        <input type="text" id="contact-name" class="form-control" placeholder="Escribe tu nombre y apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="contact-email" class="form-control" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject" class="form-label">Motivo de Consulta</label>
+                        <select id="contact-subject" class="form-control" style="background-image: none;" required>
+                            <option value="Certificados y Documentos">Certificados de Sacramentos</option>
+                            <option value="Intención de Misa">Intenciones de Misa</option>
+                            <option value="Catequesis y Charlas">Catequesis y Formaciones</option>
+                            <option value="Consulta General">Otra consulta general</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" class="form-label">Mensaje o Detalle de Solicitud</label>
+                        <textarea id="contact-message" class="form-control" placeholder="Describe tu solicitud, nombres y fechas si requieres certificados..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: var(--space-xs);">
+                        Enviar por WhatsApp Oficial
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: HOGAR DETALLES -->
+    <div class="modal-overlay" id="modal-hogar">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Hogar Nuestra Señora del Carmen</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Nuestra Misión de Acogida</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">El hogar brinda un espacio digno de residencia para adultos mayores, entregándoles cuidados de enfermería básica, alimentación balanceada, terapia ocupacional y contención afectiva y espiritual fundada en valores evangélicos franciscanos.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Ubicación y Santa Misa</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">
+                    <strong>Dirección:</strong> Calle Holandesa N° 0902, Temuco.<br>
+                    <strong>Santa Misa:</strong> Lunes a Sábado: 08:30 hrs — Domingo: 10:00 hrs.
+                </p>
+
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">¿Cómo puedes colaborar?</h4>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Donaciones en especies:</strong> Alimentos no perecibles, pañales de adulto mayor, útiles de aseo personal o insumos clínicos (vendas, gasas, etc.).</li>
+                    <li><strong>Voluntariado:</strong> Grupos juveniles o laicos dedicados a acompañar a los residentes en lecturas, paseos en el patio o talleres recreativos.</li>
+                    <li><strong>Socio Solidario:</strong> Aportes económicos mensuales fijos que apoyan la compra de medicamentos específicos y mantención del inmueble.</li>
+                </ul>
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Coordinar Ayuda o Voluntariado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: CAFÉ FRATERNO DETALLES -->
+    <div class="modal-overlay" id="modal-cafe">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Café Fraterno</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Mesa Compartida y Dignidad</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">El Café Fraterno es una iniciativa nacida en el seno de la comunidad parroquial para responder al dolor de nuestros hermanos sin techo. Más allá de un plato de comida o una bebida caliente, buscamos devolver la dignidad de sentirnos prójimos sentándonos a la misma mesa.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">¿Cómo participar?</h4>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Cocina y Servicio:</strong> Apoyo práctico en la preparación de desayunos o cenas en los comedores parroquiales.</li>
+                    <li><strong>Aportes Directos:</strong> Donación de pan, té, café, azúcar, embutidos y mercadería básica en Secretaría.</li>
+                </ul>
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Hacerse Voluntario</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: OFS DETALLES -->
+    <div class="modal-overlay" id="modal-ofs">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Orden Franciscana Seglar (OFS)</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Caminar Laico a la Luz del Poverello</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">La OFS acoge a hombres y mujeres casados o solteros que, insertos en sus trabajos y familias del día a día, desean seguir a Jesús con el carisma de la ecología integral, la paz constructiva y la simplicidad alegre de San Francisco.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Nuestras Reuniones</h4>
+                <p style="font-size: 0.9rem;">Nos reunimos habitualmente en los salones parroquiales para orar, meditar y coordinar actividades apostólicas de hermandad.</p>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Reunión Mensual:</strong> Segundos domingos del mes después de la Misa Mayor.</li>
+                    <li><strong>Enfoque:</strong> Estudio de la Regla, ecología comunitaria y asistencia franciscana.</li>
+                </ul>
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Contactar a la Fraternidad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: SCOUT DETALLES -->
+    <div class="modal-overlay" id="modal-scout">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Grupo Scout San Francisco</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Creciendo al Aire Libre</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">Pertenecientes a la Asociación de Guías y Scouts de Chile, formamos a jóvenes y niños a través del método scout: vida en patrullas, servicio activo y lealtad con la naturaleza. San Francisco de Asís es nuestro patrono ecológico.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Ramas y Edades</h4>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Manada de Lobatos:</strong> Niños y niñas de 7 a 10 años.</li>
+                    <li><strong>Compañía / Tropa:</strong> Jóvenes de 11 a 15 años.</li>
+                    <li><strong>Ruta:</strong> Jóvenes de 16 a 19 años.</li>
+                </ul>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Reuniones</h4>
+                <p style="font-size: 0.9rem;">Todos los días sábados de 15:00 hrs a 18:00 hrs en los patios de la sede parroquial de Manuel Montt.</p>
+                
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Solicitar Ficha de Postulación</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: GRUPO BÍBLICO ISAÍAS -->
+    <div class="modal-overlay" id="modal-isaias">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Grupo Bíblico Isaías</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Estudio Profético del Antiguo Testamento</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">El Grupo Bíblico Isaías se centra en la lectura reflexiva e histórica de las Sagradas Escrituras del Antiguo Testamento, enfocándose especialmente en los profetas mayores y menores. Buscamos entender la preparación histórica para la venida de Jesucristo y su relevancia para los tiempos modernos.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Horarios y Reuniones</h4>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Cuándo:</strong> Todos los lunes de 19:30 hrs a 21:00 hrs.</li>
+                    <li><strong>Dónde:</strong> Sala San Damián (Salón Parroquial Principal).</li>
+                    <li><strong>Requisito:</strong> Ninguno, solo traer tu Biblia personal.</li>
+                </ul>
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Inscribirse o Consultar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: GRUPO BÍBLICO SANTIAGO APÓSTOL -->
+    <div class="modal-overlay" id="modal-santiago">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem;">Grupo Bíblico Santiago Apóstol</h3>
+                <button class="modal-close-btn" aria-label="Cerrar ventana">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-bottom: var(--space-2xs);">Fe Activa a la Luz de las Epístolas</h4>
+                <p style="font-size: 0.9rem; line-height: 1.5;">Inspirados en la famosa máxima del Apóstol Santiago: *"La fe sin obras está muerta"*, nuestro grupo se dedica al estudio interactivo de las epístolas del Nuevo Testamento y los Hechos de los Apóstoles, traduciendo cada lección en obras activas de misericordia y ayuda a la comunidad de Temuco.</p>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary); margin-top: var(--space-md); margin-bottom: var(--space-2xs);">Horarios y Reuniones</h4>
+                <ul style="font-size: 0.9rem; padding-left: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+                    <li><strong>Cuándo:</strong> Todos los miércoles de 19:30 hrs a 21:00 hrs.</li>
+                    <li><strong>Dónde:</strong> Sala Santa Clara (Piso 2 del Centro Parroquial).</li>
+                    <li><strong>Acción:</strong> Combina lecturas con misiones de ayuda social quincenales.</li>
+                </ul>
+                <div style="margin-top: var(--space-lg); text-align: center;">
+                    <a href="#modal-secretaria" data-modal-open="modal-secretaria" class="btn btn-primary">Inscribirse o Consultar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
