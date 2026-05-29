@@ -458,7 +458,7 @@ button, input, textarea, select {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/parroquia_original.png');
+    background-image: url('../img/parroquia_original.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.04; /* Highly transparent, extremely subtle background */
