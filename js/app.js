@@ -162,57 +162,57 @@ ${message}`;
     // Define 6 slides representing different parish activities
     const instaSlides = [
         {
-            img: "img/parroquia_original.jpg",
-            caption: "¡Paz y Bien! Compartimos imágenes de la renovada fachada de nuestro histórico Templo Parroquial (Manuel Montt 39, Temuco). Un trabajo en comunidad para resguardar nuestro valioso monumento eclesial. ⛪✨ #SanFrancisco #Temuco #Comunidad #Restauracion",
-            likes: 124,
-            comments: [
-                { user: "paz_temuco", text: "Hermoso trabajo de restauración. ¡Felicitaciones! 🙌" },
-                { user: "carlos_mora", text: "Un gran orgullo para nuestro barrio de Manuel Montt. Quedó espectacular." }
-            ]
-        },
-        {
-            img: "img/scouts_community.png",
-            caption: "¡Gran sábado de campamento y servicio! Nuestros lobatos y pioneros del Grupo Scout \"San Francisco\" vivieron una jornada inolvidable de aprendizaje en la naturaleza y cuidado de nuestra casa común. 🏕️🌲 #Scouts #SanFrancisco #Temuco #Lobatos #Naturaleza",
-            likes: 89,
-            comments: [
-                { user: "jorge_valdes", text: "Excelente jornada para los niños, sigan adelante con esa hermosa labor formativa." },
-                { user: "clara_m", text: "¡Qué alegría ver a los jóvenes tan comprometidos con el medio ambiente!" }
-            ]
-        },
-        {
-            img: "img/cafe_fraterno_solidario.png",
-            caption: "Agradecemos infinitamente a todos los voluntarios y bienhechores que hacen posible el Café Fraterno cada semana. Con su ayuda, llevamos alimento, abrigo y escucha a nuestros hermanos de la calle. ☕🍞❤️ #CafeFraterno #ObraSocial #Caridad #SanFrancisco #AccionSolidaria",
-            likes: 156,
-            comments: [
-                { user: "maria_paz", text: "Una bendición de obra. Dios bendiga las manos de todos los voluntarios." },
-                { user: "pedro_asistencia", text: "Si desean colaborar con té, pan o azúcar, recuerden que recibimos aportes en la secretaría." }
-            ]
-        },
-        {
-            img: "img/liturgical_bible_hero.png",
-            caption: "¿Sabías qué significan los colores litúrgicos en nuestro altar? Hoy te explicamos la riqueza simbólica del verde en este Tiempo Ordinario: esperanza, crecimiento y vida en Cristo. 💚📖⛪ #Liturgia #ColoresLiturgicos #Catequesis #SanFrancisco #TiempoOrdinario",
-            likes: 95,
-            comments: [
-                { user: "estudiante_fe", text: "Muy didáctica la explicación. Excelente aporte para comprender la liturgia." },
-                { user: "diacono_marcelo", text: "Una gran guía formativa para toda la comunidad." }
-            ]
-        },
-        {
-            img: "img/san_francisco_statue.png",
-            caption: "«Comienza haciendo lo que es necesario, después lo que es posible y de repente estarás haciendo lo imposible.» Reflexionamos hoy en las sabias enseñanzas de nuestro patrono San Francisco de Asís. ¡Feliz y bendecida semana! 🕊️🌿⛪ #SanFrancisco #PazyBien #Reflexion #Asis #Temuco",
-            likes: 142,
-            comments: [
-                { user: "sor_clara", text: "Una hermosa frase para inspirar nuestro caminar diario. Paz y Bien." },
-                { user: "juan_francis", text: "Amén. San Francisco ruega por nuestra comunidad." }
-            ]
-        },
-        {
-            img: "img/sanctuary_candles.png",
-            caption: "En la quietud de nuestro templo, encendemos una luz por todas las intenciones de nuestra comunidad parroquial, especialmente por los enfermos y quienes más necesitan de la misericordia divina. 🕯️🙏✨ #Oracion #Comunidad #Fe #Santuario #Temuco",
+            img: "img/insta_real_1.jpg",
+            caption: "En el marco del #díadelpatrimonio. Nuestro Templo abrió sus puertas como parte del recorrido de la ruta histórica #iglesiascatólicas de la ciudad de #temuco. Gracias por visitarnos. 🏛️❤️",
             likes: 115,
             comments: [
-                { user: "marta_temuco", text: "Me uno en oración por la salud de todos los enfermos de la parroquia." },
-                { user: "francisco_j", text: "Que la luz de Cristo ilumine siempre nuestros hogares." }
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
+            ]
+        },
+        {
+            img: "img/insta_real_2.jpg",
+            caption: "#díadelpatrimonio #temuco #cultura #iglesiaspatrimoniales ⛪✨",
+            likes: 110,
+            comments: [
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
+            ]
+        },
+        {
+            img: "img/insta_real_3.jpg",
+            caption: "Jóvenes, Jesús está aquí. ¿Te detienes un rato con Él? Te invitamos a la Misa Universitaria de Corpus Christi en la Parroquia San Francisco de Asís. Corpus Christi es la fiesta en la que celebramos que Jesús se queda realmente presente en la Eucaristía. No es un símbolo, es Él. Vivo, real, esperándote. Antes de la Misa vamos a tener un momento de adoración al Santísimo. Un espacio sin apuro, solo tú y el Señor, para frenar el ritmo de la U, poner el corazón en orden y hablar con Él cara a cara. Ven aunque vengas cansado, con dudas o sin saber qué decir. Él te recibe así como estás. Trae a tus amigos, a tu grupo de pastoral, al compañero de la U. Que este día sea una pausa para encontrarnos con Aquel que se hace Pan por nosotros. Te esperamos. Todos son bienvenidos/as. 🍞🍷❤️",
+            likes: 105,
+            comments: [
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
+            ]
+        },
+        {
+            img: "img/insta_real_4.jpg",
+            caption: "Nuestra Madre.... #madredejesús #católicos #santamaría #madredelaiglesia 🌹🙏",
+            likes: 100,
+            comments: [
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
+            ]
+        },
+        {
+            img: "img/insta_real_5.jpg",
+            caption: "⛪❤️ Hito Diocesano: Pintura Fachada Parroquia San Francisco. Con la Santa Eucaristía, la comunidad San Francisco de Asís de Temuco agradeció a los benefactores que aportaron en la pintura del icónico templo parroquial ubicado en Manuel Montt, y que este 2026 cumple su primer centenario. Agradecemos profundamente a Luis Felipe Braithwaite, Mauricio Mardones y Pedro Elias, que en su representación asistió Anita Elias, por ayudar a concretar un anhelo que la comunidad parroquial y los temuquenses llevaban desde hace años. 🏛️✨ Recemos por la comunidad parroquial que también contribuyó significativamente para la renovación de la fachada #diocesisdetemuco #iglesia #catolicos #pazybien",
+            likes: 95,
+            comments: [
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
+            ]
+        },
+        {
+            img: "img/insta_real_6.jpg",
+            caption: "#catolicos #niñosyniñas #temuco #pentecostes 🔥👶👧⛪",
+            likes: 90,
+            comments: [
+                { user: "comunidad_sfa", text: "¡Paz y Bien! Excelente publicación. 🙏" },
+                { user: "vecino_temuco", text: "Muchas bendiciones por compartir esto." }
             ]
         }
     ];
