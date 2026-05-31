@@ -262,7 +262,7 @@
                     </div>
 
                     <!-- Liturgical Info Panel -->
-                    <div class="card card-accent" style="height: 100%; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="card card-accent" style="height: auto; min-height: 250px; display: flex; flex-direction: column; justify-content: flex-start; gap: var(--space-sm);">
                         <div id="liturgical-details">
                             <!-- Loaded Dynamically when day clicked -->
                             <p style="color: var(--text-muted); text-align: center;">Selecciona un día del calendario para visualizar sus lecturas bíblicas y temporada litúrgica.</p>
@@ -276,7 +276,6 @@
                             </button>
                         </div>
                         
-                        <!-- Legend of colors -->
                         <div style="margin-top: var(--space-lg); border-top: 1px solid var(--border-color); padding-top: var(--space-sm);">
                             <h5 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-xs);">Guía de Colores Litúrgicos</h5>
                             <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs); font-size: 0.8rem;">
@@ -285,6 +284,16 @@
                                 <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-green" style="width: 12px; height: 12px; padding: 0;"></span> Tiempo Ordinario</span>
                                 <span style="display: inline-flex; align-items: center; gap: 4px;"><span class="liturgical-badge season-red" style="width: 12px; height: 12px; padding: 0;"></span> Fiestas / Mártires</span>
                             </div>
+                        </div>
+                        
+                        <!-- Enlace al Credo Niceno Constantinopolitano -->
+                        <div style="margin-top: var(--space-md); border-top: 1px solid var(--border-color); padding-top: var(--space-sm); text-align: center;">
+                            <a href="credo.html" class="btn btn-secondary" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                </svg>
+                                Credo Niceno Constantinopolitano
+                            </a>
                         </div>
                     </div>
                 </div>
