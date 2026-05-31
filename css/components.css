@@ -398,3 +398,62 @@ textarea.form-control {
     resize: vertical;
     min-height: 120px;
 }
+
+/* DYNAMIC INSTAGRAM GRID & LIGHTBOX MODAL */
+.insta-grid-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    aspect-ratio: 1;
+}
+
+.insta-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal) ease;
+}
+
+.insta-grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.insta-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity var(--transition-fast) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.insta-grid-item:hover .insta-grid-overlay {
+    opacity: 1;
+}
+
+/* Lightbox responsiveness */
+@media (max-width: 768px) {
+    #insta-lightbox-modal .modal-container {
+        flex-direction: column !important;
+        max-height: 95vh !important;
+        overflow-y: auto !important;
+    }
+    #insta-lightbox-modal .modal-container > div:first-child {
+        aspect-ratio: 1.2 !important;
+    }
+    #insta-lightbox-modal .modal-container > div:last-child {
+        min-width: 100% !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border-color) !important;
+    }
+}
+
