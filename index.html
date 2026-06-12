@@ -99,7 +99,7 @@
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content animate-fade-in-up">
-                <span class="hero-subtitle">Parroquia San Francisco de Asís</span>
+                <span class="hero-subtitle" style="font-size: 1.35rem; font-weight: 600; letter-spacing: 0.1em; display: inline-block; margin-bottom: var(--space-xs);">Parroquia San Francisco de Asís de Temuco</span>
                 <h1 class="hero-title">Paz y Bien en nuestra Comunidad</h1>
                 <p class="hero-desc">Un espacio de fe, encuentro y fraternidad franciscana en pleno corazón de Temuco. Sean bienvenidos a nuestra casa.</p>
                 <div class="flex-center" style="gap: var(--space-sm); flex-wrap: wrap;">
@@ -111,10 +111,6 @@
 
         <!-- SERVICES & PASTORAL HUB -->
         <section class="section-padding container watermark-bg" id="pastoral-hub">
-            <div class="text-center" style="margin-bottom: var(--space-xl);">
-                <h2 style="font-size: 2.2rem; margin-bottom: var(--space-xs);">Centro Pastoral</h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Busca y accede rápidamente a los horarios, trámites e información de nuestra parroquia en Temuco.</p>
-            </div>
 
             <!-- Real-time filtering Search Box -->
             <div class="search-container">
@@ -129,18 +125,19 @@
                 
                 <!-- CARD: MISAS Y HORARIOS -->
                 <div class="card card-accent hover-lift animate-fade-in-up delay-1" data-searchable data-search-keywords="misas horarios confesiones eucaristia adoracion santisimo domingo sabado">
-                    <span class="card-meta">Eucaristía y Celebraciones</span>
-                    <h3 class="card-title">Misas y Confesiones</h3>
+                    <span class="card-meta">Celebraciones</span>
+                    <h3 class="card-title">Eucaristías, Confesiones y Adoración al Santísimo</h3>
                     <p class="card-desc">Horarios de celebraciones litúrgicas, sacramentos de reconciliación y adoración al Santísimo Sacramento en nuestro templo principal de Manuel Montt.</p>
                     
                     <div class="tabs-parent" style="margin-top: var(--space-sm);">
                         <div class="tabs-header">
-                            <button class="tab-btn active" data-tab-target="tab-misas">Misas</button>
+                            <button class="tab-btn active" data-tab-target="tab-misas">Eucaristías</button>
                             <button class="tab-btn" data-tab-target="tab-confesiones">Confesiones</button>
                             <button class="tab-btn" data-tab-target="tab-adoracion">Adoración</button>
                         </div>
                         
                         <div class="tab-content active" id="tab-misas">
+                            <p style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin-bottom: var(--space-xs);">En el Templo Parroquial:</p>
                             <div class="timetable">
                                 <div class="timetable-row">
                                     <span class="timetable-day">Martes a Sábado</span>
@@ -154,23 +151,15 @@
                         </div>
                         
                         <div class="tab-content" id="tab-confesiones">
-                            <div class="timetable">
-                                <div class="timetable-row">
-                                    <span class="timetable-day">Martes a Viernes</span>
-                                    <span class="timetable-time">18:00 hrs a 18:50 hrs</span>
-                                </div>
-                                <div class="timetable-row">
-                                    <span class="timetable-day">Domingo (Durante Eucaristía)</span>
-                                    <span class="timetable-time">12:15 hrs y 19:00 hrs</span>
-                                </div>
-                            </div>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main); margin-bottom: var(--space-xs);">Los interesados deben comunicarse con la Secretaría Parroquial.</p>
                         </div>
                         
                         <div class="tab-content" id="tab-adoracion">
+                            <p style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin-bottom: var(--space-xs);">En el Templo Parroquial:</p>
                             <div class="timetable">
                                 <div class="timetable-row">
-                                    <span class="timetable-day">Jueves Sacerdotales</span>
-                                    <span class="timetable-time">18:00 hrs a 19:00 hrs</span>
+                                    <span class="timetable-day">1er y 3er domingo de cada mes</span>
+                                    <span class="timetable-time">11:15 hrs</span>
                                 </div>
                             </div>
                         </div>
@@ -181,10 +170,7 @@
                 <div class="card card-accent hover-lift animate-fade-in-up delay-2" data-searchable data-search-keywords="sacramentos bautizo bautismo comunion catequesis confirmacion matrimonio uncion enfermos">
                     <span class="card-meta">Camino de Fe</span>
                     <h3 class="card-title">Sacramentos</h3>
-                    <p class="card-desc">Información, charlas de preparación y requisitos indispensables para celebrar los santos sacramentos de nuestra fe católica junto a la comunidad.</p>
-                    <div style="margin-top: var(--space-md);">
-                        <button class="btn btn-secondary" data-modal-open="modal-sacramentos" style="width: 100%;">Ver Requisitos Pastorales</button>
-                    </div>
+                    <p class="card-desc">Para información acerca de celebración de los sacramentos, catequesis de preparación y requisitos, consultar en la Oficina Parroquial.</p>
                 </div>
 
                 <!-- CARD: SECRETARÍA -->
