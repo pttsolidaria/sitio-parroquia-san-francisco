@@ -285,12 +285,18 @@ button, input, textarea, select {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    align-items: center;
 }
 
 .mobile-nav-link {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    display: inline-block;
+    max-width: 260px;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: center;
 }
 
 /* HERO CONTEMPLATIVO */
