@@ -158,7 +158,8 @@ ${message}`;
             contactForm.reset();
             closeAllModals();
         });
-        // 6. DYNAMIC & INTERACTIVE INSTAGRAM PROFILE FEED GRID WITH LIGHTBOX VISOR
+    }
+    // 6. DYNAMIC & INTERACTIVE INSTAGRAM PROFILE FEED GRID WITH LIGHTBOX VISOR
     // Define 6 slides representing different parish activities
     const instaSlides = [
         {
