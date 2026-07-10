@@ -253,6 +253,9 @@ ${message}`;
         currentSlide = index;
         instaLightboxModal.style.display = "flex";
         document.body.style.overflow = "hidden"; // Lock scroll
+        if (instaModalImg) {
+            instaModalImg.style.opacity = "0";
+        }
         updateModalSlide();
     }
 
@@ -260,18 +263,38 @@ ${message}`;
         if (!instaLightboxModal) return;
         instaLightboxModal.style.display = "none";
         document.body.style.overflow = ""; // Restore scroll
+        if (instaModalImg) {
+            instaModalImg.src = "";
+            instaModalImg.style.opacity = "0";
+        }
     }
 
     function updateModalSlide() {
         if (!instaModalImg || !instaModalCaptionText || !instaModalLikesCount || !instaModalCommentsList) return;
         const slide = instaSlides[currentSlide];
 
-        // Smooth image fade-in transition
-        instaModalImg.style.opacity = "0.3";
-        setTimeout(() => {
-            instaModalImg.src = slide.img;
-            instaModalImg.style.opacity = "1";
-        }, 150);
+        // Immediately set opacity to 0 to hide previous slide image
+        instaModalImg.style.opacity = "0";
+
+        // Preload image to avoid old image flashing or stuttering
+        const tempImg = new Image();
+        const loadedSlideIndex = currentSlide;
+        
+        tempImg.onload = () => {
+            if (loadedSlideIndex === currentSlide) {
+                instaModalImg.src = slide.img;
+                instaModalImg.style.opacity = "1";
+            }
+        };
+        
+        tempImg.onerror = () => {
+            if (loadedSlideIndex === currentSlide) {
+                instaModalImg.src = slide.img;
+                instaModalImg.style.opacity = "1";
+            }
+        };
+
+        tempImg.src = slide.img;
 
         // Caption
         instaModalCaptionText.innerHTML = slide.caption;
