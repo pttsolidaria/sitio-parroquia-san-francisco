@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Centenario Parroquial — Parroquia San Francisco de Asís</title>
+    <meta name="description" content="Conmemoración y actividades por los 100 años del templo de la Parroquia San Francisco de Asís de Temuco (1926-2026).">
+    <meta name="keywords" content="Centenario Parroquia San Francisco Temuco, 100 años, actividades centenario, historia franciscana Temuco">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ptthetrooper-dwmny.wordpress.com/centenario.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Centenario Parroquial — Parroquia San Francisco de Asís">
+    <meta property="og:description" content="Hemos comenzado las actividades de celebración por nuestro centenario (1926-2026). ¡Entérate aquí!">
+    <meta property="og:url" content="https://ptthetrooper-dwmny.wordpress.com/centenario.html">
+    <meta property="og:image" content="img/centenario.jpg">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .centenario-header {
+            position: relative;
+            padding: var(--space-2xl) 0 var(--space-xl) 0;
+            background: linear-gradient(to bottom, var(--secondary-light), var(--bg-main));
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .centenario-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+            align-items: start;
+        }
+
+        @media (min-width: 1024px) {
+            .centenario-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .centenario-frame {
+            border: 6px solid var(--secondary);
+            outline: 2px solid var(--primary);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background-color: var(--bg-card);
+            line-height: 0;
+            box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0,0,0,0.4);
+            max-width: 100%;
+        }
+
+        .announcement-box {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .announcement-text {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-normal);
+            font-weight: 400;
+        }
+        
+        .video-wrapper {
+            border: 4px solid var(--secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            background-color: #000;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="main-navbar">
+                <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 2h2v7h6v2h-6v11h-2v-11h-6v-2h6V2z"/>
+                    </svg>
+                    <span class="nav-logo-text">S. Francisco</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="centenario.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Centenario</a></li>
+                    <li><a href="historia.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Historia</a></li>
+                    <li><a href="espiritualidad.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Esp. Franciscana</a></li>
+                    <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
+                    <li><a href="index.html#pastoral-hub" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#misiones" class="nav-link">Misiones</a></li>
+                    <li><a href="index.html#comunidades" class="nav-link">Comunidades</a></li>
+                    <li><a href="index.html#noticias-sociales" class="nav-link">Nuestras RR.SS.</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn flex-center" id="theme-toggle" aria-label="Alternar tema de color">
+                        <svg viewBox="0 0 24 24" id="theme-icon">
+                            <!-- Theme icon loaded dynamically via JavaScript -->
+                        </svg>
+                    </button>
+                    <button class="nav-toggle-btn" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
+        <ul class="mobile-nav-menu text-center">
+            <li><a href="centenario.html" class="mobile-nav-link" style="color: var(--secondary);">Centenario</a></li>
+            <li><a href="historia.html" class="mobile-nav-link" style="color: var(--secondary);">Historia</a></li>
+            <li><a href="espiritualidad.html" class="mobile-nav-link" style="color: var(--secondary);">Esp. Franciscana</a></li>
+            <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
+            <li><a href="index.html#pastoral-hub" class="mobile-nav-link">Servicios Pastorales</a></li>
+            <li><a href="index.html#misiones" class="mobile-nav-link">Misiones Sociales</a></li>
+            <li><a href="index.html#comunidades" class="mobile-nav-link">Comunidades de Base</a></li>
+            <li><a href="index.html#noticias-sociales" class="mobile-nav-link">Nuestras RR.SS.</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN BODY SECTION -->
+    <main>
+        
+        <!-- HEADER -->
+        <section class="centenario-header">
+            <div class="container animate-fade-in-up">
+                <span style="font-family: var(--font-heading); font-size: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em;">Jubileo Parroquial</span>
+                <h1 style="font-size: 2.8rem; margin-top: var(--space-2xs); margin-bottom: var(--space-xs); font-family: var(--font-heading);">100 Años del Templo</h1>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem; font-weight: 300;">Celebrando un siglo de fe, encuentro y fraternidad franciscana (1926 - 2026).</p>
+            </div>
+        </section>
+
+        <!-- CONTENT SECTION -->
+        <section class="section-padding container">
+            <div class="centenario-grid">
+                
+                <!-- Left Side: Poster -->
+                <div class="animate-fade-in-up delay-1">
+                    <div class="centenario-frame">
+                        <img src="img/centenario.jpg" alt="Afiche Oficial Centenario 1926-2026" style="width: 100%; height: auto; display: block; object-fit: contain;">
+                    </div>
+                </div>
+
+                <!-- Right Side: Details & Video -->
+                <div class="animate-fade-in-up delay-2" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                    <div class="announcement-box">
+                        <p class="announcement-text">
+                            <strong>Hemos comenzado las actividades de celebración por nuestro centenario.</strong> Iremos actualizando esta página con la información sobre fechas e iniciativas en torno a este importante evento. ¡Manténganse atentos!
+                        </p>
+                    </div>
+
+                    <!-- Video player with fallback -->
+                    <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: var(--space-3xs);">Video Conmemorativo</h3>
+                        <div class="video-wrapper">
+                            <video id="centenario-video" controls poster="img/centenario.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="img/centenario.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                            
+                            <!-- Video Fallback Container -->
+                            <div id="video-fallback" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-md); text-align: center; color: white; background: rgba(0,0,0,0.85); z-index: 1;">
+                                <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: var(--secondary); margin-bottom: var(--space-xs);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                                <h4 style="margin-bottom: var(--space-3xs); font-family: var(--font-body); font-weight: 600;">Video del Centenario</h4>
+                                <p style="font-size: 0.85rem; color: #ccc; max-width: 320px; margin: 0;">El video de conmemoración estará disponible próximamente en este espacio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="text-center" style="margin-top: var(--space-2xl);">
+                <a href="index.html" class="btn btn-primary">&larr; Volver al Portal Parroquial</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: var(--font-heading);">Parroquia San Francisco</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-sm);">Sede y templo parroquial de la Orden de los Hermanos Menores (Franciscanos) en Temuco. Paz y Bien en el Señor.</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-xs); font-weight: 500;">Párroco: Pbro. Leonardo Villagrán Santana</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-3xs); font-weight: 500;">Diácono: Don Marcelo Schmeisser Nicklitschek</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-2xs);">Fundada in 1926. Diócesis de Temuco.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto y Enlaces</h3>
+                <ul class="footer-links" style="font-size: 0.9rem;">
+                    <li><a href="index.html#liturgia">Liturgia del Día</a></li>
+                    <li><a href="index.html#misiones">Misiones Sociales</a></li>
+                    <li><a href="espiritualidad.html">Espiritualidad Franciscana</a></li>
+                    <li><a href="https://obispadotemuco.cl" target="_blank" rel="noopener">Diócesis de Temuco</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="font-size: 0.9rem;">
+                <h3>Coordenadas</h3>
+                <p style="margin-top: var(--space-sm);">Manuel Montt Nº 39, Temuco, Región de la Araucanía, Chile.</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Teléfono: +56 45 2210481</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Correo: <a href="mailto:parroquialourdestemuco@gmail.com" style="color: inherit; text-decoration: underline;">parroquialourdestemuco@gmail.com</a></p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: var(--space-2xs);">Urgencias e unciones coordinar directamente en oficina.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Parroquia San Francisco de Asís — Temuco. Desarrollado en fraternidad con Antigravity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Video loading validation script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("centenario-video");
+            const fallback = document.getElementById("video-fallback");
+            if (video && fallback) {
+                // If video triggers an error (file doesn't exist)
+                video.addEventListener("error", () => {
+                    fallback.style.display = "flex";
+                    video.style.display = "none";
+                });
+                
+                // Head check of the src to detect 404 in advance
+                const source = video.querySelector("source");
+                if (source) {
+                    fetch(source.src, { method: "HEAD" })
+                        .then(res => {
+                            if (!res.ok) {
+                                fallback.style.display = "flex";
+                                video.style.display = "none";
+                            }
+                        })
+                        .catch(() => {
+                            fallback.style.display = "flex";
+                            video.style.display = "none";
+                        });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
