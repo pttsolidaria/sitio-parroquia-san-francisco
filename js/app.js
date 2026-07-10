@@ -447,4 +447,16 @@ ${message}`;
             closeInstaModal();
         }
     });
+
+    // 7. CENTENARIO ANNOUNCEMENT POPUP (ON LOAD)
+    const modalCentenario = document.getElementById("modal-centenario");
+    if (modalCentenario) {
+        if (!sessionStorage.getItem("centenarioShown")) {
+            setTimeout(() => {
+                modalCentenario.classList.add("open");
+                document.body.style.overflow = "hidden"; // Lock scroll
+            }, 800); // Premium delay for onload entry
+            sessionStorage.setItem("centenarioShown", "true");
+        }
+    }
 });
