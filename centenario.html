@@ -174,17 +174,35 @@
                         </p>
                     </div>
 
-                    <!-- Video player with fallback -->
-                    <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                    <!-- Video player with fallback: Rene Pesenti -->
+                    <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-bottom: var(--space-md);">
                         <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: var(--space-3xs);">Saludo del Fr. Rene Pesenti O.F.M.</h3>
                         <div class="video-wrapper">
-                            <video id="centenario-video" controls poster="img/centenario.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                            <video id="video-pesenti" controls poster="img/centenario.jpg" style="width: 100%; height: 100%; object-fit: cover;">
                                 <source src="img/Saludo%20Centenario%20Rene%20Pesenti.mp4" type="video/mp4">
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                             
                             <!-- Video Fallback Container -->
-                            <div id="video-fallback" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-md); text-align: center; color: white; background: rgba(0,0,0,0.85); z-index: 1;">
+                            <div id="fallback-pesenti" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-md); text-align: center; color: white; background: rgba(0,0,0,0.85); z-index: 1;">
+                                <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: var(--secondary); margin-bottom: var(--space-xs);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                                <h4 style="margin-bottom: var(--space-3xs); font-family: var(--font-body); font-weight: 600;">Video del Centenario</h4>
+                                <p style="font-size: 0.85rem; color: #ccc; max-width: 320px; margin: 0;">El video de conmemoración estará disponible próximamente en este espacio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video player with fallback: Jose Manuel Hernandez -->
+                    <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: var(--space-3xs);">Saludo del Fr. José Manuel Hernández O.F.M.</h3>
+                        <div class="video-wrapper">
+                            <video id="video-hernandez" controls poster="img/centenario.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="img/Saludo%20Centenario%20Jose%20Manuel%20Hernandez.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                            
+                            <!-- Video Fallback Container -->
+                            <div id="fallback-hernandez" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-md); text-align: center; color: white; background: rgba(0,0,0,0.85); z-index: 1;">
                                 <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: var(--secondary); margin-bottom: var(--space-xs);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
                                 <h4 style="margin-bottom: var(--space-3xs); font-family: var(--font-body); font-weight: 600;">Video del Centenario</h4>
                                 <p style="font-size: 0.85rem; color: #ccc; max-width: 320px; margin: 0;">El video de conmemoración estará disponible próximamente en este espacio.</p>
@@ -244,31 +262,36 @@
     <!-- Video loading validation script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const video = document.getElementById("centenario-video");
-            const fallback = document.getElementById("video-fallback");
-            if (video && fallback) {
-                // If video triggers an error (file doesn't exist)
-                video.addEventListener("error", () => {
-                    fallback.style.display = "flex";
-                    video.style.display = "none";
-                });
-                
-                // Head check of the src to detect 404 in advance
-                const source = video.querySelector("source");
-                if (source) {
-                    fetch(source.src, { method: "HEAD" })
-                        .then(res => {
-                            if (!res.ok) {
+            const validateVideo = (videoId, fallbackId) => {
+                const video = document.getElementById(videoId);
+                const fallback = document.getElementById(fallbackId);
+                if (video && fallback) {
+                    // If video triggers an error (file doesn't exist)
+                    video.addEventListener("error", () => {
+                        fallback.style.display = "flex";
+                        video.style.display = "none";
+                    });
+                    
+                    // Head check of the src to detect 404 in advance
+                    const source = video.querySelector("source");
+                    if (source) {
+                        fetch(source.src, { method: "HEAD" })
+                            .then(res => {
+                                if (!res.ok) {
+                                    fallback.style.display = "flex";
+                                    video.style.display = "none";
+                                }
+                            })
+                            .catch(() => {
                                 fallback.style.display = "flex";
                                 video.style.display = "none";
-                            }
-                        })
-                        .catch(() => {
-                            fallback.style.display = "flex";
-                            video.style.display = "none";
-                        });
+                            });
+                    }
                 }
-            }
+            };
+
+            validateVideo("video-pesenti", "fallback-pesenti");
+            validateVideo("video-hernandez", "fallback-hernandez");
         });
     </script>
 </body>
