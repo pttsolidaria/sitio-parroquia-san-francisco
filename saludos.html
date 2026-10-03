@@ -366,8 +366,10 @@
             const counterBadge = document.getElementById("word-count-badge");
             const mensajeExito = document.getElementById("mensaje-exito");
             const muroSaludos = document.getElementById("muro-saludos");
+            const totalSaludosBadge = document.getElementById("total-saludos-badge");
 
             const MAX_WORDS = 500;
+            const API_ENDPOINT = "https://sheetdb.io/api/v1/58f61be4dda40";
 
             // Word Counter function
             function countWords(text) {
@@ -392,20 +394,23 @@
                 });
             }
 
-            // Load saved saludos from localStorage
-            function loadSavedSaludos() {
-                try {
-                    const saved = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
-                    saved.forEach(item => {
-                        renderSaludoCard(item.nombre, item.fecha, item.mensaje, true);
-                    });
-                } catch(e) {
-                    console.error("Error loading saved saludos:", e);
-                }
+            function escapeHtml(text) {
+                if (!text) return "";
+                const div = document.createElement("div");
+                div.textContent = text;
+                return div.innerHTML;
             }
 
-            // Render Saludo Card
+            // Render Saludo Card with Duplicate Check
             function renderSaludoCard(nombre, fecha, mensaje, prepend = false) {
+                const existingCards = Array.from(muroSaludos.querySelectorAll(".saludo-card"));
+                const isDuplicate = existingCards.some(card => {
+                    const author = card.querySelector(".saludo-author")?.textContent.trim();
+                    const body = card.querySelector(".saludo-body")?.textContent.trim();
+                    return author === nombre.trim() && body === mensaje.trim();
+                });
+                if (isDuplicate) return;
+
                 const card = document.createElement("div");
                 card.className = "saludo-card animate-fade-in-up";
                 card.innerHTML = `
@@ -418,17 +423,46 @@
                 } else {
                     muroSaludos.appendChild(card);
                 }
+                updateBadgeCount();
             }
 
-            function escapeHtml(text) {
-                const div = document.createElement("div");
-                div.textContent = text;
-                return div.innerHTML;
+            function updateBadgeCount() {
+                if (!totalSaludosBadge) return;
+                const count = muroSaludos.querySelectorAll(".saludo-card").length;
+                totalSaludosBadge.textContent = `${count} ${count === 1 ? 'publicación comunitaria' : 'publicaciones comunitarias'}`;
+            }
+
+            // Load saved saludos from Cloud API + localStorage
+            async function loadAllSaludos() {
+                // 1. Load from localStorage (offline / immediate)
+                try {
+                    const savedLocal = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
+                    savedLocal.forEach(item => {
+                        renderSaludoCard(item.nombre, item.fecha, item.mensaje, true);
+                    });
+                } catch(e) {
+                    console.error("Error loading local saludos:", e);
+                }
+
+                // 2. Fetch shared saludos from Cloud DB
+                try {
+                    const response = await fetch(API_ENDPOINT);
+                    if (response.ok) {
+                        const rows = await response.json();
+                        rows.forEach(row => {
+                            if (row.name && row.comment) {
+                                renderSaludoCard(row.name, row.age || 'Comunidad Parroquial', row.comment, true);
+                            }
+                        });
+                    }
+                } catch(e) {
+                    console.warn("Could not fetch cloud saludos:", e);
+                }
             }
 
             // Form Submit handler
             if (form) {
-                form.addEventListener("submit", (e) => {
+                form.addEventListener("submit", async (e) => {
                     e.preventDefault();
                     
                     const nombre = inputNombre.value.trim();
@@ -441,24 +475,46 @@
                         return;
                     }
 
-                    const fecha = new Date().toLocaleDateString("es-CL", {
+                    const fechaFormatted = new Date().toLocaleDateString("es-CL", {
                         day: "numeric",
                         month: "long",
                         year: "numeric"
                     });
+                    const fechaBadge = `${fechaFormatted} — Fraternidad Parroquial`;
 
-                    // Save to localStorage
-                    const newSaludo = { nombre, email, mensaje, fecha };
+                    // Render immediately to wall for user
+                    renderSaludoCard(nombre, fechaBadge, mensaje, true);
+
+                    // Save to local storage
+                    const newSaludo = { nombre, email, mensaje, fecha: fechaBadge };
                     try {
                         const saved = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
                         saved.push(newSaludo);
                         localStorage.setItem("saludosParroquiales", JSON.stringify(saved));
                     } catch(e) {
-                        console.error("Error saving saludo to localStorage:", e);
+                        console.error("Error saving local saludo:", e);
                     }
 
-                    // Render to wall
-                    renderSaludoCard(nombre, fecha + " — Fraternidad Parroquial", mensaje, true);
+                    // Save to shared Cloud DB so ALL users on ANY device can see it
+                    try {
+                        await fetch(API_ENDPOINT, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                data: [
+                                    {
+                                        name: nombre,
+                                        comment: mensaje,
+                                        age: fechaBadge
+                                    }
+                                ]
+                            })
+                        });
+                    } catch(e) {
+                        console.error("Error saving cloud saludo:", e);
+                    }
 
                     // Reset Form & Show Success Message
                     form.reset();
@@ -472,7 +528,7 @@
                 });
             }
 
-            loadSavedSaludos();
+            loadAllSaludos();
         });
     </script>
 </body>
