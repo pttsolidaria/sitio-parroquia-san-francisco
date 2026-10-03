@@ -50,6 +50,50 @@
     text-decoration: underline;
 }
 
+/* NAVBAR BUTTON HIGHLIGHTS */
+.nav-link-btn {
+    background-color: var(--secondary) !important;
+    color: #1a120b !important;
+    font-weight: 700 !important;
+    padding: 0.4rem 0.95rem !important;
+    border-radius: var(--radius-full) !important;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.nav-link-btn::after {
+    display: none !important;
+}
+
+.nav-link-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6) !important;
+}
+
+.nav-link-btn-outline {
+    border: 1px solid var(--secondary) !important;
+    color: var(--secondary) !important;
+    font-weight: 600 !important;
+    padding: 0.35rem 0.85rem !important;
+    border-radius: var(--radius-full) !important;
+    transition: all var(--transition-fast) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.nav-link-btn-outline::after {
+    display: none !important;
+}
+
+.nav-link-btn-outline:hover {
+    background-color: var(--secondary) !important;
+    color: #1a120b !important;
+}
+
 /* CARDS & GLASSMORPHISM */
 .card {
     background-color: var(--bg-card);

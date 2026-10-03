@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Saludos 100 Años — Parroquia San Francisco de Asís</title>
+    <meta name="description" content="Envía y comparte tu saludo por los 100 años de la Parroquia San Francisco de Asís de Temuco (1926-2026). Libro de Acogida y Fraternidad.">
+    <meta name="keywords" content="Saludos Centenario Parroquia San Francisco Temuco, Libro de Saludos 100 Años, Mensajes Franciscanos">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://parroquiasanfranciscotemuco.cl/saludos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Saludos 100 Años — Parroquia San Francisco de Asís">
+    <meta property="og:description" content="¡Envíanos tu saludo por nuestro Centenario Parroquial! (1926-2026).">
+    <meta property="og:url" content="https://parroquiasanfranciscotemuco.cl/saludos.html">
+    <meta property="og:image" content="img/centenario.jpg">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .saludos-header {
+            position: relative;
+            padding: var(--space-2xl) 0 var(--space-xl) 0;
+            background: linear-gradient(to bottom, var(--secondary-light), var(--bg-main));
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .saludos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+            align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .saludos-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .form-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xs);
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-normal);
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+            box-sizing: border-box;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .counter-badge {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .saludo-card {
+            background-color: var(--bg-card);
+            border-left: 5px solid var(--secondary);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-md);
+            position: relative;
+            transition: transform var(--transition-fast);
+        }
+
+        .saludo-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .saludo-author {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .saludo-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .saludo-body {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: var(--text-normal);
+            white-space: pre-line;
+        }
+
+        .qr-section-box {
+            background-color: var(--bg-card);
+            border: 1px dashed var(--secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+            margin-top: var(--space-lg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="main-navbar">
+                <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 2h2v7h6v2h-6v11h-2v-11h-6v-2h6V2z"/>
+                    </svg>
+                    <span class="nav-logo-text">S. Francisco</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="centenario.html" class="nav-link nav-link-btn-outline">Centenario</a></li>
+                    <li><a href="saludos.html" class="nav-link nav-link-btn">🕊️ Saludos 100 años</a></li>
+                    <li><a href="historia.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Historia</a></li>
+                    <li><a href="espiritualidad.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Esp. Franciscana</a></li>
+                    <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
+                    <li><a href="index.html#pastoral-hub" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#misiones" class="nav-link">Misiones</a></li>
+                    <li><a href="index.html#comunidades" class="nav-link">Comunidades</a></li>
+                    <li><a href="index.html#noticias-sociales" class="nav-link">Nuestras RR.SS.</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn flex-center" id="theme-toggle" aria-label="Alternar tema de color">
+                        <svg viewBox="0 0 24 24" id="theme-icon">
+                            <!-- Theme icon loaded dynamically via JavaScript -->
+                        </svg>
+                    </button>
+                    <button class="nav-toggle-btn" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
+        <ul class="mobile-nav-menu text-center">
+            <li><a href="centenario.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 600;">Centenario</a></li>
+            <li><a href="saludos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700; background: var(--secondary); color: #1a120b !important; padding: 0.4rem 1rem; border-radius: 20px; display: inline-block; margin: 4px 0;">🕊️ Saludos 100 años</a></li>
+            <li><a href="historia.html" class="mobile-nav-link" style="color: var(--secondary);">Historia</a></li>
+            <li><a href="espiritualidad.html" class="mobile-nav-link" style="color: var(--secondary);">Esp. Franciscana</a></li>
+            <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
+            <li><a href="index.html#pastoral-hub" class="mobile-nav-link">Servicios Pastorales</a></li>
+            <li><a href="index.html#misiones" class="mobile-nav-link">Misiones Sociales</a></li>
+            <li><a href="index.html#comunidades" class="mobile-nav-link">Comunidades de Base</a></li>
+            <li><a href="index.html#noticias-sociales" class="mobile-nav-link">Nuestras RR.SS.</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN BODY SECTION -->
+    <main>
+        
+        <!-- HEADER -->
+        <section class="saludos-header">
+            <div class="container animate-fade-in-up">
+                <span style="font-family: var(--font-heading); font-size: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em;">Libro de Acogida Parroquial</span>
+                <h1 style="font-size: 2.8rem; margin-top: var(--space-2xs); margin-bottom: var(--space-xs); font-family: var(--font-heading);">Saludos 100 Años</h1>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; font-weight: 300;">Un espacio fraterno para dejar tu mensaje de fe, gratitud y fraternidad en la conmemoración de nuestro Centenario (1926 - 2026).</p>
+            </div>
+        </section>
+
+        <!-- MAIN GRID SECTION -->
+        <section class="section-padding container">
+            <div class="saludos-grid">
+                
+                <!-- LEFT COLUMN: FORMULARIO DE SALUDOS -->
+                <div class="animate-fade-in-up" id="formulario">
+                    <div class="form-card">
+                        <div style="display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                            <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: var(--secondary);"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                            <h2 style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--primary); margin: 0;">¡Envíanos tu Saludo del Centenario!</h2>
+                        </div>
+                        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: var(--space-md);">Tu mensaje quedará publicado en este muro comunitario para ser conservado en los registros de nuestro Jubileo.</p>
+
+                        <!-- SUCCESS FEEDBACK ALERT -->
+                        <div id="mensaje-exito" style="display: none; background-color: rgba(38, 166, 91, 0.15); border: 1px solid #26a65b; color: #1e703c; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-md); font-weight: 500; text-align: center;">
+                            🙏 ¡Muchas gracias! Tu saludo ha sido publicado con éxito en nuestro Muro del Centenario.
+                        </div>
+
+                        <!-- FORM -->
+                        <form id="form-saludo">
+                            <div class="form-group">
+                                <label for="input-nombre" class="form-label">Nombre *</label>
+                                <input type="text" id="input-nombre" class="form-input" placeholder="Ej: Familia Silva Morales / María González" required maxlength="100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-email" class="form-label">Correo Electrónico *</label>
+                                <input type="email" id="input-email" class="form-input" placeholder="tu-correo@ejemplo.com" required maxlength="120">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">Tu correo se solicita para verificación interna y no se publicará en el muro.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-mensaje" class="form-label">Tu Saludo * (Máximo 500 palabras)</label>
+                                <textarea id="input-mensaje" class="form-textarea" rows="6" placeholder="Escribe aquí tus palabras de bendición, recuerdos o fraternidad para nuestra comunidad parroquial..." required></textarea>
+                                <div class="counter-badge" id="word-count-badge">0 / 500 palabras</div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 0.8rem 1rem;">
+                                🕊️ Publicar Mi Saludo en el Libro del Centenario
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- QR CODE DIGEST FOR DESKTOP VISITORS & TV / WHATSAPP DOWNLOADS -->
+                    <div class="qr-section-box">
+                        <h4 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: 4px;">Acceso Fácil desde tu Celular</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Escanea este código QR con la cámara de tu teléfono para ingresar directamente a esta página y dejar tu saludo:</p>
+                        <img src="img/qr_saludos.png" alt="Código QR Saludos Centenario" style="width: 170px; height: 170px; display: block; margin: 0 auto; border-radius: var(--radius-sm); border: 3px solid var(--secondary); background: white; padding: 4px;">
+                        <span style="font-size: 0.82rem; color: var(--primary); font-weight: 600; display: block; margin-top: 6px; margin-bottom: var(--space-xs);">https://parroquiasanfranciscotemuco.cl/saludos.html</span>
+                        
+                        <div style="border-top: 1px dashed var(--border-color); padding-top: var(--space-xs); margin-top: var(--space-xs); text-align: center;">
+                            <span style="font-size: 0.82rem; font-weight: 600; color: var(--primary); display: block; margin-bottom: 6px;">📥 Descarga las imágenes para difundir:</span>
+                            <div style="display: flex; gap: var(--space-xs); justify-content: center; flex-wrap: wrap;">
+                                <a href="img/qr_saludos_tv.png" download="QR_Saludos_Centenario_TV.png" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+                                    📺 Imagen para Televisor (HD)
+                                </a>
+                                <a href="img/qr_saludos_whatsapp.png" download="QR_Saludos_Centenario_WhatsApp.png" target="_blank" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+                                    📱 Imagen para WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: MURO DE SALUDOS PUBLICADOS -->
+                <div class="animate-fade-in-up delay-1">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md);">
+                        <h2 style="font-size: 1.6rem; font-family: var(--font-heading); color: var(--primary); margin: 0;">Muro del Centenario</h2>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;" id="total-saludos-badge">Publicaciones comunitarias</span>
+                    </div>
+
+                    <!-- CONTAINER WHERE GREETINGS ARE LISTED -->
+                    <div id="muro-saludos">
+                        <!-- Initial Warm Greetings -->
+                        <div class="saludo-card">
+                            <div class="saludo-author">Pbro. Leonardo Villagrán Santana</div>
+                            <div class="saludo-date">Párroco — Parroquia San Francisco de Asís</div>
+                            <div class="saludo-body">"Damos gracias a Dios por este siglo de vida parroquial en el corazón de Temuco. Que el Señor bendiga a cada familia, a nuestros grupos pastorales y a cuantos hacen posible nuestra acción evangelizadora y fraterna. Paz y Bien para todos en este histórico Jubileo."</div>
+                        </div>
+
+                        <div class="saludo-card">
+                            <div class="saludo-author">Diácono Don Marcelo Schmeisser N.</div>
+                            <div class="saludo-date">Comunidad Parroquial Temuco</div>
+                            <div class="saludo-body">"Un fraternal saludo en este Centenario a todas nuestras Comunidades Eclesiales de Base, voluntariados y agentes de pastoral. Que el ejemplo de San Francisco siga guiando nuestro caminar en sencillez, fe y caridad."</div>
+                        </div>
+
+                        <div class="saludo-card">
+                            <div class="saludo-author">Orden Franciscana Seglar (OFS)</div>
+                            <div class="saludo-date">Fraternidad Laical San Francisco</div>
+                            <div class="saludo-body">"Nos unimos con gozo a la celebración de los 100 años de nuestra querida parroquia. Renovamos nuestro compromiso de vivir el Evangelio promoviendo la paz, la ecología integral y el amor a los más necesitados."</div>
+                        </div>
+
+                        <div class="saludo-card">
+                            <div class="saludo-author">Grupo Scout San Francisco</div>
+                            <div class="saludo-date">Comunidad Juvenil</div>
+                            <div class="saludo-body">"Con alegría Scout celebramos el Centenario de nuestra casa parroquial. Agradecemos el espacio de formación, autonomía y fe al aire libre que ha cobijado a tantas generaciones de niños y jóvenes."</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="text-center" style="margin-top: var(--space-2xl);">
+                <a href="index.html" class="btn btn-primary">&larr; Volver al Portal Parroquial</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: var(--font-heading);">Parroquia San Francisco</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-sm);">Sede y templo parroquial de la Orden de los Hermanos Menores (Franciscanos) en Temuco. Paz y Bien en el Señor.</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-xs); font-weight: 500;">Párroco: Pbro. Leonardo Villagrán Santana</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-3xs); font-weight: 500;">Diácono: Don Marcelo Schmeisser Nicklitschek</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-2xs);">Fundada en 1926. Diócesis de Temuco.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto y Enlaces</h3>
+                <ul class="footer-links" style="font-size: 0.9rem;">
+                    <li><a href="centenario.html">Centenario 1926-2026</a></li>
+                    <li><a href="saludos.html">Libro de Saludos</a></li>
+                    <li><a href="index.html#liturgia">Liturgia del Día</a></li>
+                    <li><a href="espiritualidad.html">Espiritualidad Franciscana</a></li>
+                    <li><a href="https://obispadotemuco.cl" target="_blank" rel="noopener">Diócesis de Temuco</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="font-size: 0.9rem;">
+                <h3>Coordenadas</h3>
+                <p style="margin-top: var(--space-sm);">Manuel Montt Nº 39, Temuco, Región de la Araucanía, Chile.</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Teléfono: +56 45 2210481</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Correo: <a href="mailto:parroquialourdestemuco@gmail.com" style="color: inherit; text-decoration: underline;">parroquialourdestemuco@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Parroquia San Francisco de Asís — Temuco. Desarrollado en fraternidad con Antigravity. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Greetings Form & Word Counter Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("form-saludo");
+            const inputNombre = document.getElementById("input-nombre");
+            const inputEmail = document.getElementById("input-email");
+            const inputMensaje = document.getElementById("input-mensaje");
+            const counterBadge = document.getElementById("word-count-badge");
+            const mensajeExito = document.getElementById("mensaje-exito");
+            const muroSaludos = document.getElementById("muro-saludos");
+
+            const MAX_WORDS = 500;
+
+            // Word Counter function
+            function countWords(text) {
+                const trimmed = text.trim();
+                if (!trimmed) return 0;
+                return trimmed.split(/\s+/).length;
+            }
+
+            // Word counter event
+            if (inputMensaje && counterBadge) {
+                inputMensaje.addEventListener("input", () => {
+                    const words = countWords(inputMensaje.value);
+                    counterBadge.textContent = `${words} / ${MAX_WORDS} palabras`;
+                    
+                    if (words > MAX_WORDS) {
+                        counterBadge.style.color = "#d9534f";
+                        counterBadge.style.fontWeight = "700";
+                    } else {
+                        counterBadge.style.color = "var(--text-muted)";
+                        counterBadge.style.fontWeight = "400";
+                    }
+                });
+            }
+
+            // Load saved saludos from localStorage
+            function loadSavedSaludos() {
+                try {
+                    const saved = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
+                    saved.forEach(item => {
+                        renderSaludoCard(item.nombre, item.fecha, item.mensaje, true);
+                    });
+                } catch(e) {
+                    console.error("Error loading saved saludos:", e);
+                }
+            }
+
+            // Render Saludo Card
+            function renderSaludoCard(nombre, fecha, mensaje, prepend = false) {
+                const card = document.createElement("div");
+                card.className = "saludo-card animate-fade-in-up";
+                card.innerHTML = `
+                    <div class="saludo-author">${escapeHtml(nombre)}</div>
+                    <div class="saludo-date">${escapeHtml(fecha)}</div>
+                    <div class="saludo-body">${escapeHtml(mensaje)}</div>
+                `;
+                if (prepend) {
+                    muroSaludos.insertBefore(card, muroSaludos.firstChild);
+                } else {
+                    muroSaludos.appendChild(card);
+                }
+            }
+
+            function escapeHtml(text) {
+                const div = document.createElement("div");
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Form Submit handler
+            if (form) {
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    
+                    const nombre = inputNombre.value.trim();
+                    const email = inputEmail.value.trim();
+                    const mensaje = inputMensaje.value.trim();
+                    const words = countWords(mensaje);
+
+                    if (words > MAX_WORDS) {
+                        alert(`Tu mensaje contiene ${words} palabras. Por favor, redúcelo a un máximo de 500 palabras.`);
+                        return;
+                    }
+
+                    const fecha = new Date().toLocaleDateString("es-CL", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric"
+                    });
+
+                    // Save to localStorage
+                    const newSaludo = { nombre, email, mensaje, fecha };
+                    try {
+                        const saved = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
+                        saved.push(newSaludo);
+                        localStorage.setItem("saludosParroquiales", JSON.stringify(saved));
+                    } catch(e) {
+                        console.error("Error saving saludo to localStorage:", e);
+                    }
+
+                    // Render to wall
+                    renderSaludoCard(nombre, fecha + " — Fraternidad Parroquial", mensaje, true);
+
+                    // Reset Form & Show Success Message
+                    form.reset();
+                    counterBadge.textContent = `0 / ${MAX_WORDS} palabras`;
+                    mensajeExito.style.display = "block";
+                    mensajeExito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+                    setTimeout(() => {
+                        mensajeExito.style.display = "none";
+                    }, 8000);
+                });
+            }
+
+            loadSavedSaludos();
+        });
+    </script>
+</body>
+</html>

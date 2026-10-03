@@ -50,8 +50,9 @@
                     <span class="nav-logo-text">S. Francisco</span>
                 </a>
                 
-                                                <ul class="nav-menu">
-                    <li><a href="centenario.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Centenario</a></li>
+                                                                <ul class="nav-menu">
+                    <li><a href="centenario.html" class="nav-link nav-link-btn-outline">Centenario</a></li>
+                    <li><a href="saludos.html" class="nav-link nav-link-btn">🕊️ Saludos 100 años</a></li>
                     <li><a href="historia.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Historia</a></li>
                     <li><a href="espiritualidad.html" class="nav-link" style="color: var(--secondary); font-weight: 600;">Esp. Franciscana</a></li>
                     <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
@@ -79,8 +80,9 @@
 
     <!-- MOBILE MENU DRAWER OVERLAY -->
     <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
-                        <ul class="mobile-nav-menu text-center">
-            <li><a href="centenario.html" class="mobile-nav-link" style="color: var(--secondary);">Centenario</a></li>
+                                <ul class="mobile-nav-menu text-center">
+            <li><a href="centenario.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 600;">Centenario</a></li>
+            <li><a href="saludos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700; background: var(--secondary); color: #1a120b !important; padding: 0.4rem 1rem; border-radius: 20px; display: inline-block; margin: 4px 0;">🕊️ Saludos 100 años</a></li>
             <li><a href="historia.html" class="mobile-nav-link" style="color: var(--secondary);">Historia</a></li>
             <li><a href="espiritualidad.html" class="mobile-nav-link" style="color: var(--secondary);">Esp. Franciscana</a></li>
             <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
@@ -105,6 +107,7 @@
                 <h1 class="hero-title">Paz y Bien en nuestra Comunidad</h1>
                 <p class="hero-desc">Un espacio de fe, encuentro y fraternidad franciscana en pleno corazón de Temuco. Sean bienvenidos a nuestra casa.</p>
                 <div class="flex-center" style="gap: var(--space-sm); flex-wrap: wrap;">
+                    <a href="saludos.html#formulario" class="btn" style="background-color: var(--secondary); color: #1a120b; font-weight: 700; border: none; box-shadow: 0 4px 15px rgba(212,175,55,0.5);">🕊️ Saludos 100 Años</a>
                     <a href="#pastoral-hub" class="btn btn-primary pulse-primary">Explorar Servicios</a>
                     <a href="#liturgia" class="btn btn-secondary">Misas del Día</a>
                 </div>
@@ -970,12 +973,23 @@
             <!-- Gold Frame Container -->
             <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
                 <div style="border: 6px solid var(--secondary); outline: 2px solid var(--primary); border-radius: var(--radius-sm); overflow: hidden; background-color: var(--bg-card); line-height: 0; box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0,0,0,0.4); max-width: 100%;">
-                    <img src="img/centenario.jpg" alt="Actividades Centenario Parroquia San Francisco 1926-2026" style="width: 100%; height: auto; display: block; object-fit: contain;">
+                    <a href="saludos.html#formulario" title="Haz clic para enviar tu saludo">
+                        <img src="img/centenario.jpg" alt="Actividades Centenario Parroquia San Francisco 1926-2026" style="width: 100%; height: auto; display: block; object-fit: contain; cursor: pointer;">
+                    </a>
                 </div>
-                <!-- Suggestion Text Link under the Frame -->
-                <a href="centenario.html" style="text-align: center; display: block; text-decoration: none; margin-top: var(--space-xs); padding: var(--space-xs) var(--space-sm); background: rgba(0,0,0,0.75); border-radius: var(--radius-sm); color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.8); font-size: 0.95rem; font-family: var(--font-body); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: var(--backdrop-blur); -webkit-backdrop-filter: var(--backdrop-blur); transition: background-color 0.2s, transform 0.2s; width: 100%; box-sizing: border-box;" onmouseover="this.style.background='rgba(0,0,0,0.95)';" onmouseout="this.style.background='rgba(0,0,0,0.75)';">
-                    Visita la página sobre el Centenario al interior de nuestro sitio parroquial.
-                </a>
+                <!-- Banner & Call to Action Buttons under the Frame -->
+                <div style="margin-top: var(--space-xs); padding: var(--space-md); background: #1a120b; border-radius: var(--radius-sm); border: 2px solid var(--secondary); color: white; text-align: center; width: 100%; box-sizing: border-box; box-shadow: var(--shadow-lg);">
+                    <h3 style="font-family: var(--font-heading); color: var(--secondary); font-size: 1.35rem; margin-bottom: 6px;">🎉 ¡Celebrando nuestros 100 Años!</h3>
+                    <p style="font-size: 1.05rem; margin-bottom: var(--space-sm); color: #ffffff; font-weight: 500;">¡Queremos contar con tu recuerdo y bendición en nuestro Libro de Oro!</p>
+                    <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+                        <a href="saludos.html#formulario" class="btn" style="background-color: var(--secondary); color: #1a120b; font-weight: 800; font-size: 1.05rem; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 30px; box-shadow: 0 4px 15px rgba(212,175,55,0.6); display: inline-flex; align-items: center; gap: 8px;">
+                            🕊️ ¡Envíanos tu saludo!
+                        </a>
+                        <a href="centenario.html" class="btn" style="background-color: var(--primary); color: #ffffff; font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.75rem 1.25rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 8px;">
+                            🏛️ Programa Centenario
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
