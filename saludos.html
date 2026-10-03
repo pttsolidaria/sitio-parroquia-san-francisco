@@ -402,16 +402,40 @@
                 return div.innerHTML;
             }
 
-            // Render Saludo Card with Strict Duplicate Check
+            // Normalize text to ignore case, extra spaces and formatting in duplicate checks
+            function normalizeText(text) {
+                if (!text) return "";
+                return text.toString()
+                           .toLowerCase()
+                           .replace(/\s+/g, " ")
+                           .trim();
+            }
+
+            // Set of normalized author|body keys already rendered on screen
+            const renderedKeys = new Set();
+
+            // Render Saludo Card with Strict Normalized Duplicate Check
             function renderSaludoCard(nombre, fecha, mensaje, prepend = false) {
                 if (!nombre || !mensaje) return;
+                
+                const normAuthor = normalizeText(nombre);
+                const normBody = normalizeText(mensaje);
+                const itemKey = `${normAuthor}:::${normBody}`;
+
+                // 1. Check in-memory Set of rendered keys
+                if (renderedKeys.has(itemKey)) return;
+
+                // 2. Check DOM elements directly
                 const existingCards = Array.from(muroSaludos.querySelectorAll(".saludo-card"));
-                const isDuplicate = existingCards.some(card => {
-                    const author = card.querySelector(".saludo-author")?.textContent.trim();
-                    const body = card.querySelector(".saludo-body")?.textContent.trim();
-                    return author === nombre.trim() && body === mensaje.trim();
+                const isDuplicateDOM = existingCards.some(card => {
+                    const cardAuthor = normalizeText(card.querySelector(".saludo-author")?.textContent);
+                    const cardBody = normalizeText(card.querySelector(".saludo-body")?.textContent);
+                    return cardAuthor === normAuthor && cardBody === normBody;
                 });
-                if (isDuplicate) return;
+                if (isDuplicateDOM) return;
+
+                // Mark key as rendered
+                renderedKeys.add(itemKey);
 
                 const card = document.createElement("div");
                 card.className = "saludo-card animate-fade-in-up";
