@@ -356,7 +356,7 @@
     <script src="js/theme.js"></script>
     <script src="js/app.js"></script>
     
-    <!-- Greetings Form & Word Counter Logic -->
+    <!-- Greetings Form & Word Counter Logic (Dual Cloud Redundancy System) -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("form-saludo");
@@ -369,7 +369,8 @@
             const totalSaludosBadge = document.getElementById("total-saludos-badge");
 
             const MAX_WORDS = 500;
-            const PERMANENT_API = "https://api.apispreadsheets.com/data/123/";
+            const PRIMARY_API = "https://api.apispreadsheets.com/data/123/";
+            const BACKUP_API = "https://sheetdb.io/api/v1/58f61be4dda40";
 
             // Word Counter function
             function countWords(text) {
@@ -401,7 +402,7 @@
                 return div.innerHTML;
             }
 
-            // Render Saludo Card with Duplicate Check
+            // Render Saludo Card with Strict Duplicate Check
             function renderSaludoCard(nombre, fecha, mensaje, prepend = false) {
                 if (!nombre || !mensaje) return;
                 const existingCards = Array.from(muroSaludos.querySelectorAll(".saludo-card"));
@@ -444,16 +445,16 @@
                 if (words.length <= 1) return false;
                 
                 // Ignore English sample template dummy words
-                const dummyKeywords = ['Pencil', 'Binder', 'Pen', 'Desk', 'OrderDate', 'Units', 'UnitCost', 'Jones', 'Kivell', 'Jardine', 'Sorvino', 'Thompson', 'Howard', 'Parent', 'Smith', 'Morgan', 'Andrews', 'Gill'];
+                const dummyKeywords = ['Pencil', 'Binder', 'Pen', 'Desk', 'OrderDate', 'Units', 'UnitCost', 'Jones', 'Kivell', 'Jardine', 'Sorvino', 'Thompson', 'Howard', 'Parent', 'Smith', 'Morgan', 'Andrews', 'Gill', 'Redundancia', 'Prueba'];
                 const hasDummyKeyword = dummyKeywords.some(w => cleanName.includes(w) || cleanComment.includes(w));
                 if (hasDummyKeyword) return false;
 
                 return true;
             }
 
-            // Load saved saludos from Permanent Cloud API + localStorage
+            // Load saved saludos from Dual Cloud APIs + Local Storage
             async function loadAllSaludos() {
-                // 1. Load from localStorage (offline / immediate)
+                // 1. Load from local device storage (offline / instant)
                 try {
                     const savedLocal = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
                     savedLocal.forEach(item => {
@@ -465,13 +466,13 @@
                     console.error("Error loading local saludos:", e);
                 }
 
-                // 2. Fetch shared saludos from Permanent Cloud DB
+                // 2. Fetch from Primary Cloud Database
                 try {
-                    const response = await fetch(PERMANENT_API);
-                    if (response.ok) {
-                        const resData = await response.json();
-                        const rows = resData.data || [];
-                        rows.forEach(row => {
+                    const res1 = await fetch(PRIMARY_API);
+                    if (res1.ok) {
+                        const resData1 = await res1.json();
+                        const rows1 = resData1.data || [];
+                        rows1.forEach(row => {
                             const author = row.Rep || row.name;
                             const body = row.Item || row.comment;
                             const date = row.Region || row.age || 'Comunidad Parroquial';
@@ -481,11 +482,30 @@
                         });
                     }
                 } catch(e) {
-                    console.warn("Could not fetch cloud saludos:", e);
+                    console.warn("Primary API load warning:", e);
+                }
+
+                // 3. Fetch from Secondary Backup Cloud Database (Double Redundancy)
+                try {
+                    const res2 = await fetch(BACKUP_API);
+                    if (res2.ok) {
+                        const resData2 = await res2.json();
+                        const rows2 = Array.isArray(resData2) ? resData2 : (resData2.data || []);
+                        rows2.forEach(row => {
+                            const author = row.name || row.Rep;
+                            const body = row.comment || row.Item;
+                            const date = row.age || row.Region || 'Comunidad Parroquial';
+                            if (author && body && isAuthenticSaludo(author, body)) {
+                                renderSaludoCard(author, date, body, true);
+                            }
+                        });
+                    }
+                } catch(e) {
+                    console.warn("Backup API load warning:", e);
                 }
             }
 
-            // Form Submit handler
+            // Form Submit Handler
             if (form) {
                 form.addEventListener("submit", async (e) => {
                     e.preventDefault();
@@ -507,10 +527,10 @@
                     });
                     const fechaBadge = `${fechaFormatted} — Fraternidad Parroquial`;
 
-                    // Render immediately to wall for user
+                    // 1. Render immediately to wall for the user
                     renderSaludoCard(nombre, fechaBadge, mensaje, true);
 
-                    // Save to local storage
+                    // 2. Save to local device storage
                     const newSaludo = { nombre, email, mensaje, fecha: fechaBadge };
                     try {
                         const saved = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
@@ -520,24 +540,35 @@
                         console.error("Error saving local saludo:", e);
                     }
 
-                    // Save to Permanent Cloud DB so ALL users on ANY device can see it
-                    try {
-                        await fetch(PERMANENT_API, {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({
-                                data: {
-                                    Rep: nombre,
-                                    Item: mensaje,
-                                    Region: fechaBadge
+                    // 3. Dual Cloud Persistence: Save concurrently to Primary AND Backup Cloud Databases
+                    const p1 = fetch(PRIMARY_API, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            data: {
+                                Rep: nombre,
+                                Item: mensaje,
+                                Region: fechaBadge
+                            }
+                        })
+                    }).catch(err => console.warn("P1 save warning:", err));
+
+                    const p2 = fetch(BACKUP_API, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            data: [
+                                {
+                                    name: nombre,
+                                    comment: mensaje,
+                                    age: fechaBadge
                                 }
-                            })
-                        });
-                    } catch(e) {
-                        console.error("Error saving cloud saludo:", e);
-                    }
+                            ]
+                        })
+                    }).catch(err => console.warn("P2 save warning:", err));
+
+                    // Wait for both cloud saves to finish concurrently
+                    await Promise.allSettled([p1, p2]);
 
                     // Reset Form & Show Success Message
                     form.reset();
