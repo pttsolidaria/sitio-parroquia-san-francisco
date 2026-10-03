@@ -433,13 +433,33 @@
                 totalSaludosBadge.textContent = `${count} ${count === 1 ? 'publicación comunitaria' : 'publicaciones comunitarias'}`;
             }
 
+            // Check if a greeting is an authentic Spanish community greeting
+            function isAuthenticSaludo(name, comment) {
+                if (!name || !comment) return false;
+                const cleanName = name.trim();
+                const cleanComment = comment.trim();
+                
+                // Ignore 1-word greetings or empty greetings
+                const words = cleanComment.split(/\s+/);
+                if (words.length <= 1) return false;
+                
+                // Ignore English sample template dummy words
+                const dummyKeywords = ['Pencil', 'Binder', 'Pen', 'Desk', 'OrderDate', 'Units', 'UnitCost', 'Jones', 'Kivell', 'Jardine', 'Sorvino', 'Thompson', 'Howard', 'Parent', 'Smith', 'Morgan', 'Andrews', 'Gill'];
+                const hasDummyKeyword = dummyKeywords.some(w => cleanName.includes(w) || cleanComment.includes(w));
+                if (hasDummyKeyword) return false;
+
+                return true;
+            }
+
             // Load saved saludos from Permanent Cloud API + localStorage
             async function loadAllSaludos() {
                 // 1. Load from localStorage (offline / immediate)
                 try {
                     const savedLocal = JSON.parse(localStorage.getItem("saludosParroquiales") || "[]");
                     savedLocal.forEach(item => {
-                        renderSaludoCard(item.nombre, item.fecha, item.mensaje, true);
+                        if (isAuthenticSaludo(item.nombre, item.mensaje)) {
+                            renderSaludoCard(item.nombre, item.fecha, item.mensaje, true);
+                        }
                     });
                 } catch(e) {
                     console.error("Error loading local saludos:", e);
@@ -455,7 +475,7 @@
                             const author = row.Rep || row.name;
                             const body = row.Item || row.comment;
                             const date = row.Region || row.age || 'Comunidad Parroquial';
-                            if (author && body) {
+                            if (author && body && isAuthenticSaludo(author, body)) {
                                 renderSaludoCard(author, date, body, true);
                             }
                         });
