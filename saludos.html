@@ -369,7 +369,7 @@
             const totalSaludosBadge = document.getElementById("total-saludos-badge");
 
             const MAX_WORDS = 500;
-            const API_ENDPOINT = "https://sheetdb.io/api/v1/58f61be4dda40";
+            const PERMANENT_API = "https://api.apispreadsheets.com/data/123/";
 
             // Word Counter function
             function countWords(text) {
@@ -403,6 +403,7 @@
 
             // Render Saludo Card with Duplicate Check
             function renderSaludoCard(nombre, fecha, mensaje, prepend = false) {
+                if (!nombre || !mensaje) return;
                 const existingCards = Array.from(muroSaludos.querySelectorAll(".saludo-card"));
                 const isDuplicate = existingCards.some(card => {
                     const author = card.querySelector(".saludo-author")?.textContent.trim();
@@ -432,7 +433,7 @@
                 totalSaludosBadge.textContent = `${count} ${count === 1 ? 'publicación comunitaria' : 'publicaciones comunitarias'}`;
             }
 
-            // Load saved saludos from Cloud API + localStorage
+            // Load saved saludos from Permanent Cloud API + localStorage
             async function loadAllSaludos() {
                 // 1. Load from localStorage (offline / immediate)
                 try {
@@ -444,14 +445,18 @@
                     console.error("Error loading local saludos:", e);
                 }
 
-                // 2. Fetch shared saludos from Cloud DB
+                // 2. Fetch shared saludos from Permanent Cloud DB
                 try {
-                    const response = await fetch(API_ENDPOINT);
+                    const response = await fetch(PERMANENT_API);
                     if (response.ok) {
-                        const rows = await response.json();
+                        const resData = await response.json();
+                        const rows = resData.data || [];
                         rows.forEach(row => {
-                            if (row.name && row.comment) {
-                                renderSaludoCard(row.name, row.age || 'Comunidad Parroquial', row.comment, true);
+                            const author = row.Rep || row.name;
+                            const body = row.Item || row.comment;
+                            const date = row.Region || row.age || 'Comunidad Parroquial';
+                            if (author && body) {
+                                renderSaludoCard(author, date, body, true);
                             }
                         });
                     }
@@ -495,21 +500,19 @@
                         console.error("Error saving local saludo:", e);
                     }
 
-                    // Save to shared Cloud DB so ALL users on ANY device can see it
+                    // Save to Permanent Cloud DB so ALL users on ANY device can see it
                     try {
-                        await fetch(API_ENDPOINT, {
+                        await fetch(PERMANENT_API, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
                             },
                             body: JSON.stringify({
-                                data: [
-                                    {
-                                        name: nombre,
-                                        comment: mensaje,
-                                        age: fechaBadge
-                                    }
-                                ]
+                                data: {
+                                    Rep: nombre,
+                                    Item: mensaje,
+                                    Region: fechaBadge
+                                }
                             })
                         });
                     } catch(e) {
