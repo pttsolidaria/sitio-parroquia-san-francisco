@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>SF100: Videos — Parroquia San Francisco de Asís</title>
+    <meta name="description" content="Videoteca del Centenario de la Parroquia San Francisco de Asís de Temuco. Mensajes, testimonios y saludos en video.">
+    <meta name="keywords" content="SF100 Videos, Centenario Parroquia San Francisco Temuco, Videoteca Franciscana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://parroquiasanfranciscotemuco.cl/videos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SF100: Videos — Parroquia San Francisco de Asís">
+    <meta property="og:description" content="Videoteca del Centenario Parroquial (1926-2026).">
+    <meta property="og:url" content="https://parroquiasanfranciscotemuco.cl/videos.html">
+    <meta property="og:image" content="img/centenario.jpg">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .videos-header {
+            position: relative;
+            padding: var(--space-2xl) 0 var(--space-xl) 0;
+            background: linear-gradient(to bottom, var(--secondary-light), var(--bg-main));
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .video-card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        @media (min-width: 768px) {
+            .video-card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .video-box-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .video-box-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-sm);
+            background-color: #000000;
+            margin-top: var(--space-xs);
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="main-navbar">
+                <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 2h2v7h6v2h-6v11h-2v-11h-6v-2h6V2z"/>
+                    </svg>
+                    <span class="nav-logo-text">S. Francisco</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="saludos.html" class="nav-link nav-link-btn">SF100: Saludos</a></li>
+                    <li><a href="videos.html" class="nav-link nav-link-btn-outline">SF100: Videos</a></li>
+                    <li><a href="recuerdos.html" class="nav-link nav-link-btn-outline">SF100: Recuerdos</a></li>
+                    <li><a href="itinerario.html" class="nav-link nav-link-btn-outline">SF100: Itinerario</a></li>
+                    <li><a href="historia.html" class="nav-link">Historia</a></li>
+                    <li><a href="espiritualidad.html" class="nav-link">Esp. Franciscana</a></li>
+                    <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
+                    <li><a href="index.html#pastoral-hub" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#noticias-sociales" class="nav-link">Nuestras RR.SS.</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn flex-center" id="theme-toggle" aria-label="Alternar tema de color">
+                        <svg viewBox="0 0 24 24" id="theme-icon"></svg>
+                    </button>
+                    <button class="nav-toggle-btn" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
+        <ul class="mobile-nav-menu text-center">
+            <li><a href="saludos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Saludos</a></li>
+            <li><a href="videos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Videos</a></li>
+            <li><a href="recuerdos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Recuerdos</a></li>
+            <li><a href="itinerario.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Itinerario</a></li>
+            <li><a href="historia.html" class="mobile-nav-link">Historia</a></li>
+            <li><a href="espiritualidad.html" class="mobile-nav-link">Esp. Franciscana</a></li>
+            <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
+            <li><a href="index.html#pastoral-hub" class="mobile-nav-link">Servicios Pastorales</a></li>
+            <li><a href="index.html#noticias-sociales" class="mobile-nav-link">Nuestras RR.SS.</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN BODY SECTION -->
+    <main>
+        
+        <!-- HEADER -->
+        <section class="videos-header">
+            <div class="container animate-fade-in-up">
+                <span style="font-family: var(--font-heading); font-size: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em;">Videoteca del Jubileo</span>
+                <h1 style="font-size: 2.8rem; margin-top: var(--space-2xs); margin-bottom: var(--space-xs); font-family: var(--font-heading);">SF100: Videos</h1>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; font-weight: 300;">Testimonios, saludos de hermanos franciscanos y recuerdos audiovisuales en la conmemoración de nuestro Centenario (1926 - 2026).</p>
+            </div>
+        </section>
+
+        <!-- VIDEO GALLERY SECTION -->
+        <section class="section-padding container">
+            
+            <div class="video-card-grid">
+                
+                <!-- VIDEO 1: Rene Pesenti -->
+                <div class="video-box-card animate-fade-in-up">
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Testimonio Franciscano</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-top: 4px; margin-bottom: 6px;">Saludo del Fr. Rene Pesenti O.F.M.</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Mensaje de bendición y fraternidad en el Centenario Parroquial.</p>
+                    <div class="video-wrapper">
+                        <video controls poster="img/centenario.jpg">
+                            <source src="img/Saludo%20Centenario%20Rene%20Pesenti.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- VIDEO 2: Jose Manuel Hernandez -->
+                <div class="video-box-card animate-fade-in-up delay-1">
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Testimonio Franciscano</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-top: 4px; margin-bottom: 6px;">Saludo del Fr. José Manuel Hernández O.F.M.</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Palabras de gozo y fe para nuestra comunidad de Temuco.</p>
+                    <div class="video-wrapper">
+                        <video controls poster="img/centenario.jpg">
+                            <source src="img/Saludo%20Centenario%20Jose%20Manuel%20Hernandez.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- VIDEO 3: Domingo Tapia -->
+                <div class="video-box-card animate-fade-in-up delay-2">
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em;">Testimonio Franciscano</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-top: 4px; margin-bottom: 6px;">Saludo del Fr. Domingo Tapia O.F.M.</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--space-xs);">Reflexión y acción de gracias por los 100 años de historia parroquial.</p>
+                    <div class="video-wrapper">
+                        <video controls poster="img/centenario.jpg">
+                            <source src="img/Saludo%20Centenario%20Domingo%20Tapia.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BACK TO HOME & OTHER SECTIONS -->
+            <div class="text-center" style="margin-top: var(--space-2xl); display: flex; gap: var(--space-xs); justify-center; flex-wrap: wrap;">
+                <a href="itinerario.html" class="btn btn-secondary">📅 Ver SF100: Itinerario</a>
+                <a href="saludos.html" class="btn btn-secondary">🕊️ Ver SF100: Saludos</a>
+                <a href="index.html" class="btn btn-primary">&larr; Volver al Inicio</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: var(--font-heading);">Parroquia San Francisco</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-sm);">Sede y templo parroquial de la Orden de los Hermanos Menores (Franciscanos) en Temuco. Paz y Bien en el Señor.</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-xs); font-weight: 500;">Párroco: Pbro. Leonardo Villagrán Santana</p>
+                <p style="font-size: 0.9rem; margin-top: var(--space-3xs); font-weight: 500;">Diácono: Don Marcelo Schmeisser Nicklitschek</p>
+            </div>
+            <div class="footer-col">
+                <h3>Secciones del Centenario</h3>
+                <ul class="footer-links" style="font-size: 0.9rem;">
+                    <li><a href="saludos.html">SF100: Saludos</a></li>
+                    <li><a href="videos.html">SF100: Videos</a></li>
+                    <li><a href="recuerdos.html">SF100: Recuerdos</a></li>
+                    <li><a href="itinerario.html">SF100: Itinerario</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="font-size: 0.9rem;">
+                <h3>Coordenadas</h3>
+                <p style="margin-top: var(--space-sm);">Manuel Montt Nº 39, Temuco, Región de la Araucanía, Chile.</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Teléfono: +56 45 2210481</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Parroquia San Francisco de Asís — Temuco. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

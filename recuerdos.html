@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>SF100: Recuerdos — Parroquia San Francisco de Asís</title>
+    <meta name="description" content="Álbum histórico y recuerdos fotográficos del Centenario de la Parroquia San Francisco de Asís de Temuco (1926-2026). Comparte tus fotos históricas.">
+    <meta name="keywords" content="SF100 Recuerdos, Fotos Historia Parroquia San Francisco Temuco, Galería Fotográfica Centenario">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://parroquiasanfranciscotemuco.cl/recuerdos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SF100: Recuerdos — Parroquia San Francisco de Asís">
+    <meta property="og:description" content="Galería y formulario de recuerdos fotográficos del Centenario Parroquial (1926-2026).">
+    <meta property="og:url" content="https://parroquiasanfranciscotemuco.cl/recuerdos.html">
+    <meta property="og:image" content="img/centenario.jpg">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        .recuerdos-header {
+            position: relative;
+            padding: var(--space-2xl) 0 var(--space-xl) 0;
+            background: linear-gradient(to bottom, var(--secondary-light), var(--bg-main));
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .recuerdos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+            align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .recuerdos-grid {
+                grid-template-columns: 1fr 1.1fr;
+            }
+        }
+
+        .form-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xs);
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-normal);
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-main);
+            color: var(--text-normal);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+            box-sizing: border-box;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .photo-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-lg);
+            transition: transform var(--transition-fast);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .photo-img-container {
+            width: 100%;
+            height: 280px;
+            background-color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photo-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .photo-img-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .photo-body {
+            padding: var(--space-md);
+        }
+
+        .photo-code-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .photo-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .photo-meta {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .photo-people {
+            font-size: 0.92rem;
+            color: var(--text-normal);
+            line-height: 1.5;
+        }
+
+        .admin-banner {
+            background: #1a120b;
+            color: var(--secondary);
+            border: 2px dashed var(--secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar" id="main-navbar">
+                <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 2h2v7h6v2h-6v11h-2v-11h-6v-2h6V2z"/>
+                    </svg>
+                    <span class="nav-logo-text">S. Francisco</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="saludos.html" class="nav-link nav-link-btn">SF100: Saludos</a></li>
+                    <li><a href="videos.html" class="nav-link nav-link-btn-outline">SF100: Videos</a></li>
+                    <li><a href="recuerdos.html" class="nav-link nav-link-btn-outline">SF100: Recuerdos</a></li>
+                    <li><a href="itinerario.html" class="nav-link nav-link-btn-outline">SF100: Itinerario</a></li>
+                    <li><a href="historia.html" class="nav-link">Historia</a></li>
+                    <li><a href="espiritualidad.html" class="nav-link">Esp. Franciscana</a></li>
+                    <li><a href="index.html#liturgia" class="nav-link">Liturgia</a></li>
+                    <li><a href="index.html#pastoral-hub" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#noticias-sociales" class="nav-link">Nuestras RR.SS.</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle-btn flex-center" id="theme-toggle" aria-label="Alternar tema de color">
+                        <svg viewBox="0 0 24 24" id="theme-icon"></svg>
+                    </button>
+                    <button class="nav-toggle-btn" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER OVERLAY -->
+    <div class="mobile-nav-overlay flex-center" id="mobile-menu-overlay">
+        <ul class="mobile-nav-menu text-center">
+            <li><a href="saludos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Saludos</a></li>
+            <li><a href="videos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Videos</a></li>
+            <li><a href="recuerdos.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Recuerdos</a></li>
+            <li><a href="itinerario.html" class="mobile-nav-link" style="color: var(--secondary); font-weight: 700;">SF100: Itinerario</a></li>
+            <li><a href="historia.html" class="mobile-nav-link">Historia</a></li>
+            <li><a href="espiritualidad.html" class="mobile-nav-link">Esp. Franciscana</a></li>
+            <li><a href="index.html#liturgia" class="mobile-nav-link">Calendario Litúrgico</a></li>
+            <li><a href="index.html#pastoral-hub" class="mobile-nav-link">Servicios Pastorales</a></li>
+            <li><a href="index.html#noticias-sociales" class="mobile-nav-link">Nuestras RR.SS.</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN BODY SECTION -->
+    <main>
+        
+        <!-- HEADER -->
+        <section class="recuerdos-header">
+            <div class="container animate-fade-in-up">
+                <span style="font-family: var(--font-heading); font-size: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em;">Álbum de Oro del Centenario</span>
+                <h1 style="font-size: 2.8rem; margin-top: var(--space-2xs); margin-bottom: var(--space-xs); font-family: var(--font-heading);">SF100: Recuerdos</h1>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; font-weight: 300;">Comparte tus fotografías históricas y recuerdos entrañables vividos en nuestra Parroquia San Francisco de Asís.</p>
+            </div>
+        </section>
+
+        <!-- MAIN GRID SECTION -->
+        <section class="section-padding container">
+            
+            <!-- ADMIN BANNER (Shown if admin mode active) -->
+            <div id="admin-banner-container" class="admin-banner" style="display: none;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 4px;">🔑 Modo Administrador de Recuerdos (Activado)</h3>
+                <p style="font-size: 0.9rem; color: #f0f0f0;">En esta vista puedes revisar <strong>todas las fotografías subidas</strong> con su respectivo <strong>Código Único (ej: FOTO-001)</strong> y gestionar su aprobación para la publicación pública.</p>
+            </div>
+
+            <div class="recuerdos-grid">
+                
+                <!-- LEFT COLUMN: FORMULARIO DE RECUERDOS -->
+                <div class="animate-fade-in-up" id="formulario-recuerdos">
+                    <div class="form-card">
+                        <div style="display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                            <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: var(--secondary);"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                            <h2 style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--primary); margin: 0;">Subir Foto de Recuerdo</h2>
+                        </div>
+                        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: var(--space-md);">Tu fotografía ingresará al registro del Centenario y recibirá un <strong>Código Único de Identificación</strong>. Al ser confirmada por el administrador, se publicará en la galería comunitaria.</p>
+
+                        <!-- SUCCESS FEEDBACK ALERT -->
+                        <div id="recuerdo-mensaje-exito" style="display: none; background-color: rgba(38, 166, 91, 0.15); border: 1px solid #26a65b; color: #1e703c; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-md); text-align: center;">
+                            🙏 <strong>¡Fotografía recibida con éxito!</strong><br>
+                            Se le ha asignado el Código Único: <strong id="codigo-asignado-badge" style="font-size: 1.1rem; color: var(--primary);">FOTO-001</strong>.<br>
+                            Quedará a la espera de la confirmación del administrador para su publicación pública.
+                        </div>
+
+                        <!-- FORM -->
+                        <form id="form-recuerdo">
+                            <div class="form-group">
+                                <label for="input-nombre-recuerdo" class="form-label">1. Nombre de quien sube la foto *</label>
+                                <input type="text" id="input-nombre-recuerdo" class="form-input" placeholder="Ej: María González Morales / Familia Silva" required maxlength="100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-fecha-recuerdo" class="form-label">2. Fecha de la foto *</label>
+                                <input type="text" id="input-fecha-recuerdo" class="form-input" placeholder="Ej: Año 1985 / Noviembre de 1998" required maxlength="80">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-personas-recuerdo" class="form-label">3. ¿Quiénes aparecen en la foto? *</label>
+                                <textarea id="input-personas-recuerdo" class="form-textarea" rows="3" placeholder="Describe quiénes están en la imagen, el lugar o el evento parroquial (ej: Bautizo de mi hijo Carlos con el Fr. Mateo)..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-foto-file" class="form-label">4. Fotografía escaneada o digital * (.jpg, .png, .bmp)</label>
+                                <input type="file" id="input-foto-file" class="form-input" accept="image/jpeg,image/png,image/bmp,image/webp" required style="padding: 0.5rem;">
+                                <span style="font-size: 0.78rem; color: var(--text-muted);">Puedes subir fotos escaneadas o tomadas desde tu celular.</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 0.8rem 1rem;">
+                                📷 Enviar Fotografía al Álbum del Centenario
+                            </button>
+                        </form>
+                    </div>
+
+                    <div style="text-align: center; margin-top: var(--space-md);">
+                        <button id="toggle-admin-btn" style="background: none; border: none; color: var(--text-muted); font-size: 0.82rem; cursor: pointer; text-decoration: underline;">
+                            🔑 Acceso Administrador (Revisar fotos por Código)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: GALERÍA DE RECUERDOS -->
+                <div class="animate-fade-in-up delay-1">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md);">
+                        <h2 style="font-size: 1.6rem; font-family: var(--font-heading); color: var(--primary); margin: 0;">Galería de Recuerdos</h2>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;" id="total-recuerdos-badge">Fotografías históricas</span>
+                    </div>
+
+                    <!-- CONTAINER WHERE PHOTOS ARE LISTED -->
+                    <div id="galeria-recuerdos">
+                        <!-- Initial Sample Memory -->
+                        <div class="photo-card" data-approved="true">
+                            <div class="photo-img-container">
+                                <img src="img/parroquia_original.jpg" alt="Templo Parroquial San Francisco de Asís Temuco">
+                            </div>
+                            <div class="photo-body">
+                                <span class="photo-code-badge">FOTO-000</span>
+                                <h3 class="photo-title">Templo Parroquial Histórico</h3>
+                                <div class="photo-meta">📷 Fotografía histórica — Año 1930 | Subida por: Archivo Parroquial</div>
+                                <p class="photo-people">Vista frontal de nuestro icónico templo franciscano en calle Manuel Montt durante las primeras décadas de vida parroquial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: var(--font-heading);">Parroquia San Francisco</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-sm);">Sede y templo parroquial de la Orden de los Hermanos Menores (Franciscanos) en Temuco. Paz y Bien en el Señor.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Secciones del Centenario</h3>
+                <ul class="footer-links" style="font-size: 0.9rem;">
+                    <li><a href="saludos.html">SF100: Saludos</a></li>
+                    <li><a href="videos.html">SF100: Videos</a></li>
+                    <li><a href="recuerdos.html">SF100: Recuerdos</a></li>
+                    <li><a href="itinerario.html">SF100: Itinerario</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="font-size: 0.9rem;">
+                <h3>Coordenadas</h3>
+                <p style="margin-top: var(--space-sm);">Manuel Montt Nº 39, Temuco, Región de la Araucanía, Chile.</p>
+                <p style="margin-top: var(--space-2xs); font-weight: 500;">Teléfono: +56 45 2210481</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Parroquia San Francisco de Asís — Temuco. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS & LOGIC FOR PHOTO UPLOAD & ADMIN MODERATION -->
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("form-recuerdo");
+            const inputNombre = document.getElementById("input-nombre-recuerdo");
+            const inputFecha = document.getElementById("input-fecha-recuerdo");
+            const inputPersonas = document.getElementById("input-personas-recuerdo");
+            const inputFotoFile = document.getElementById("input-foto-file");
+            const mensajeExito = document.getElementById("recuerdo-mensaje-exito");
+            const codigoBadge = document.getElementById("codigo-asignado-badge");
+            const galeriaRecuerdos = document.getElementById("galeria-recuerdos");
+            const totalRecuerdosBadge = document.getElementById("total-recuerdos-badge");
+            const adminBanner = document.getElementById("admin-banner-container");
+            const toggleAdminBtn = document.getElementById("toggle-admin-btn");
+
+            const RECUERDOS_API = "https://api.apispreadsheets.com/data/123/";
+            
+            // Check if URL has ?admin=true
+            const urlParams = new URLSearchParams(window.location.search);
+            let isAdminMode = urlParams.get('admin') === 'true';
+
+            if (isAdminMode && adminBanner) {
+                adminBanner.style.display = "block";
+            }
+
+            if (toggleAdminBtn) {
+                toggleAdminBtn.addEventListener("click", () => {
+                    if (!isAdminMode) {
+                        const pass = prompt("Ingrese la clave de administrador para revisar fotos por Código:");
+                        if (pass === "1926" || pass === "admin" || pass === "sf100") {
+                            isAdminMode = true;
+                            if (adminBanner) adminBanner.style.display = "block";
+                            alert("🔑 Modo Administrador activado. Ahora puedes revisar todas las fotos pendientes con su Código Único.");
+                            loadAllRecuerdos();
+                        } else if (pass !== null) {
+                            alert("Clave incorrecta.");
+                        }
+                    } else {
+                        isAdminMode = false;
+                        if (adminBanner) adminBanner.style.display = "none";
+                        loadAllRecuerdos();
+                    }
+                });
+            }
+
+            function getNextCode(existingItems) {
+                let maxIndex = 0;
+                existingItems.forEach(item => {
+                    if (item.codigo && item.codigo.startsWith("FOTO-")) {
+                        const num = parseInt(item.codigo.replace("FOTO-", ""), 10);
+                        if (!isNaN(num) && num > maxIndex) maxIndex = num;
+                    }
+                });
+                const nextNum = maxIndex + 1;
+                return "FOTO-" + String(nextNum).padStart(3, '0');
+            }
+
+            function renderPhotoCard(recuerdo, prepend = false) {
+                // If not in admin mode and photo is not approved, DO NOT SHOW to public
+                if (!isAdminMode && !recuerdo.aprobado) return;
+
+                // Avoid duplicate DOM rendering
+                const existing = Array.from(galeriaRecuerdos.querySelectorAll(".photo-card"));
+                if (existing.some(c => c.getAttribute("data-code") === recuerdo.codigo)) return;
+
+                const card = document.createElement("div");
+                card.className = "photo-card animate-fade-in-up";
+                card.setAttribute("data-code", recuerdo.codigo);
+                card.setAttribute("data-approved", recuerdo.aprobado ? "true" : "false");
+
+                const statusBadge = recuerdo.aprobado 
+                    ? `<span style="background-color: #26a65b; color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">✓ APROBADA PÚBLICA</span>`
+                    : `<span style="background-color: #d9534f; color: white; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">⏳ PENDIENTE DE APROBACIÓN</span>`;
+
+                const adminControls = isAdminMode ? `
+                    <div style="margin-top: var(--space-xs); border-top: 1px dashed var(--border-color); padding-top: var(--space-xs); display: flex; gap: var(--space-xs); align-items: center;">
+                        <button class="btn btn-secondary btn-toggle-approve" style="font-size: 0.8rem; padding: 0.3rem 0.7rem;">
+                            ${recuerdo.aprobado ? '❌ Desaprobar' : '✅ Aprobar Publicación'}
+                        </button>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Código para informar: <strong>${recuerdo.codigo}</strong></span>
+                    </div>
+                ` : '';
+
+                card.innerHTML = `
+                    <div class="photo-img-container">
+                        <img src="${escapeHtml(recuerdo.fotoData)}" alt="${escapeHtml(recuerdo.personas)}">
+                    </div>
+                    <div class="photo-body">
+                        <div>
+                            <span class="photo-code-badge">${escapeHtml(recuerdo.codigo)}</span>
+                            ${isAdminMode ? statusBadge : ''}
+                        </div>
+                        <h3 class="photo-title">Recuerdo del Centenario</h3>
+                        <div class="photo-meta">📷 Fecha de la foto: ${escapeHtml(recuerdo.fecha)} | Subida por: ${escapeHtml(recuerdo.nombre)}</div>
+                        <p class="photo-people"><strong>Quiénes aparecen / Detalles:</strong> ${escapeHtml(recuerdo.personas)}</p>
+                        ${adminControls}
+                    </div>
+                `;
+
+                if (isAdminMode) {
+                    const approveBtn = card.querySelector(".btn-toggle-approve");
+                    if (approveBtn) {
+                        approveBtn.addEventListener("click", () => {
+                            recuerdo.aprobado = !recuerdo.aprobado;
+                            saveRecuerdosToStorage();
+                            alert(`Fotografía ${recuerdo.codigo} marcada como: ${recuerdo.aprobado ? 'APROBADA para vista pública' : 'PENDIENTE'}`);
+                            location.reload();
+                        });
+                    }
+                }
+
+                if (prepend) {
+                    galeriaRecuerdos.insertBefore(card, galeriaRecuerdos.firstChild);
+                } else {
+                    galeriaRecuerdos.appendChild(card);
+                }
+                updateCount();
+            }
+
+            function updateCount() {
+                if (!totalRecuerdosBadge) return;
+                const count = galeriaRecuerdos.querySelectorAll(".photo-card").length;
+                totalRecuerdosBadge.textContent = `${count} ${count === 1 ? 'fotografía histórica' : 'fotografías históricas'}`;
+            }
+
+            function escapeHtml(text) {
+                if (!text) return "";
+                const div = document.createElement("div");
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            function getLocalRecuerdos() {
+                try {
+                    return JSON.parse(localStorage.getItem("recuerdosParroquiales") || "[]");
+                } catch(e) {
+                    return [];
+                }
+            }
+
+            function saveRecuerdosToStorage(list) {
+                if (list) {
+                    localStorage.setItem("recuerdosParroquiales", JSON.stringify(list));
+                } else {
+                    const cards = Array.from(galeriaRecuerdos.querySelectorAll(".photo-card"));
+                    const allRecuerdos = getLocalRecuerdos();
+                    localStorage.setItem("recuerdosParroquiales", JSON.stringify(allRecuerdos));
+                }
+            }
+
+            async function loadAllRecuerdos() {
+                const localList = getLocalRecuerdos();
+                localList.forEach(item => {
+                    renderPhotoCard(item, true);
+                });
+            }
+
+            // Form submission & photo conversion
+            if (form) {
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    
+                    const nombre = inputNombre.value.trim();
+                    const fecha = inputFecha.value.trim();
+                    const personas = inputPersonas.value.trim();
+                    const file = inputFotoFile.files[0];
+
+                    if (!file) {
+                        alert("Por favor selecciona un archivo de imagen.");
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        const fotoData = evt.target.result;
+                        const existingList = getLocalRecuerdos();
+                        const newCode = getNextCode(existingList);
+
+                        const newRecuerdo = {
+                            codigo: newCode,
+                            nombre: nombre,
+                            fecha: fecha,
+                            personas: personas,
+                            fotoData: fotoData,
+                            aprobado: false, // Default: Pending Admin Approval
+                            timestamp: new Date().toISOString()
+                        };
+
+                        existingList.push(newRecuerdo);
+                        saveRecuerdosToStorage(existingList);
+
+                        // If admin mode, render immediately
+                        renderPhotoCard(newRecuerdo, true);
+
+                        // Show success feedback with unique code
+                        if (codigoBadge) codigoBadge.textContent = newCode;
+                        mensajeExito.style.display = "block";
+                        mensajeExito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                        form.reset();
+
+                        setTimeout(() => {
+                            mensajeExito.style.display = "none";
+                        }, 12000);
+                    };
+
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            loadAllRecuerdos();
+        });
+    </script>
+</body>
+</html>
